@@ -1,0 +1,110 @@
+@page {
+  size: A4;
+  margin: 2.5cm;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #eee;
+}
+
+.a4-page {
+  width: 21cm;
+  min-height: 29.7cm;
+  background: white;
+  padding: 2.5cm;
+  margin: 1cm auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgb(31, 29, 48);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+header .left h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #333;
+}
+
+header .subtitle {
+  font-size: 16px;
+  color: #555;
+}
+
+header .right .profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgb(31, 29, 48);
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+section h2 {
+  font-size: 18px;
+  color: rgb(31, 29, 48);
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 3px;
+}
+
+section p, section li {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.footervoltar {
+    position: fixed; /* fixa no rodapé */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0; /* cor de fundo suave */
+    padding: 15px 0;
+    text-align: center; /* centraliza o conteúdo */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000; /* para ficar acima de outros elementos */
+}
+
+.voltar {
+    display: inline-block;
+    background-color: rgb(59, 59, 59);
+    color: #ededed;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    padding: 10px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    border: 2px solid #222;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: 
+        background 0.2s,
+        color 0.2s,
+        box-shadow 0.2s,
+        transform 0.15s;
+}
+
+.voltar:hover {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    transform: translateY(-2px) scale(1.04);
+    border-color: #000;
+    font-style: normal; /* remove itálico no hover */
+}

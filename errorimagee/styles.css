@@ -1,0 +1,76 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  user-select: none;
+}
+
+.error-404-container {
+  max-width: 480px;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  color: #222;
+}
+
+.error-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.error-message {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #222;
+  background-color: #bbb;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 2px solid #222;
+  transition: background-color 0.3s, color 0.3s;
+  user-select: none;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #222;
+  color: #fff;
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .error-code {
+    font-size: 6rem;
+  }
+  .error-title {
+    font-size: 1.5rem;
+  }
+}

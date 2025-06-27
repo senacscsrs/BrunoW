@@ -1,0 +1,492 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar sticky no topo */
+nav.navbar {
+  position: sticky;
+  top: 0;
+  background: #000;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  z-index: 1000;
+}
+
+/* Logo placeholder centralizado */
+.logo {
+  width: 48px;
+  height: 48px;
+  background: #bbb;
+  border-radius: 4px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Checkbox invisível para controlar o menu */
+.menu-toggle {
+  display: none;
+}
+
+/* Label hamburger */
+.hamburger {
+  position: absolute;
+  left: 1rem;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Transform hamburger em X quando ativo */
+.menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menu principal */
+.menu {
+  list-style: none;
+  position: absolute;
+  top: 60px;
+  left: 1rem;
+  background: #111;
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  width: 220px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+/* Mostrar menu quando checkbox marcado */
+.menu-toggle:checked ~ .menu {
+  display: flex;
+}
+
+/* Itens do menu */
+.menu > li {
+  position: relative;
+}
+
+.menu > li > a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: background 0.2s;
+}
+
+.menu > li > a:hover,
+.menu > li > a:focus {
+  background: #333;
+  outline: none;
+}
+
+/* Dropdown submenu */
+.dropdown > a::after {
+  content: " ▼";
+  font-size: 0.7em;
+}
+
+/* Submenu */
+.submenu {
+  list-style: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #111;
+  border-radius: 8px; /* bordas um pouco maiores */
+  width: 200px;       /* largura um pouco maior */
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6); /* sombra mais suave e maior */
+  z-index: 1001;
+  padding: 0.75rem 0; /* padding vertical para espaçamento */
+}
+
+/* Mostrar submenu ao hover ou foco */
+.dropdown:hover > .submenu,
+.dropdown:focus-within > .submenu {
+  display: flex;
+}
+
+/* Itens do submenu */
+.submenu li a {
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: normal;
+  padding: 14px 24px; /* padding maior para espaçamento */
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-radius: 4px; /* cantos arredondados nos links */
+  display: block;
+}
+
+/* Apenas muda a cor de fundo no hover/focus, sem alterar tamanho */
+.submenu li a:hover,
+.submenu li a:focus {
+  background-color: #444; /* cor de fundo mais clara para destacar */
+  outline: none;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  padding: 2rem 1rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Hero header (index, about) */
+.hero {
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-weight: bold;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: #111;
+  user-select: none;
+  margin-bottom: 0.3rem;
+}
+
+.hero p {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #555;
+  user-select: none;
+}
+
+/* Page title for projects pages */
+.page-title {
+  font-weight: bold;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #111;
+  margin: 1.5rem 0;
+  user-select: none;
+}
+
+/* Banner placeholder */
+.banner-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #bbb;
+  margin-top: 60px; /* to avoid nav */
+  margin-bottom: 1rem;
+}
+
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Project links (cards) */
+.project-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 200px;
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  user-select: none;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Remove underline on hover */
+.project-link:hover {
+  text-decoration: none;
+  color: #111;
+}
+
+/* About content */
+.about-content {
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Spotify player section */
+.spotify-player {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.spotify-player iframe {
+  border-radius: 12px;
+  width: 300px;
+  height: 152px;
+}
+
+/* Hyperlinks grid */
+.hyperlinksgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px 30px;
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  justify-items: center;
+}
+
+.hyperlinks {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 24px;
+  background-color: rgb(59, 59, 59);
+  color: #eeeeee;
+  text-decoration: none;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: 2px solid #222;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.hyperlinks:hover {
+  background-color: rgb(31, 31, 31);
+  color: white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  transform: translateY(-2px) scale(1.04);
+  border-color: #000;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #999;
+  border-top: 1px solid #eee;
+  margin-top: auto;
+}
+
+/* Main page headings (index) */
+main h1 {
+  font-weight: bold;
+  font-size: 4rem;
+  text-transform: uppercase;
+  user-select: none;
+  margin-bottom: 0.5rem;
+}
+
+main p {
+  font-weight: bold;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  color: #bbb;
+  user-select: none;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  main h1 {
+    font-size: 3rem;
+  }
+  main p {
+    font-size: 1.25rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .menu {
+    width: 160px;
+    left: 0.5rem;
+  }
+  .hamburger {
+    left: 0.5rem;
+  }
+}
+
+.indextitle {
+    margin-top: 190px;
+}
+
+/* Banner largo colado ao topo */
+.banner-placeholder {
+  width: 100vw;
+  height: 80px;
+  background: #bbb;
+  margin: 0;
+  border: none;
+}
+
+/* Título centralizado */
+.page-title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 2.5rem 0 2rem 0;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Grid centralizado, cards grudados */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1050px;
+  margin: 0 auto 3rem auto;
+  width: 100%;
+  border-top: 1px solid #222;
+  border-left: 1px solid #222;
+}
+
+/* Card de projeto estilo Balenciaga */
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  min-height: 220px;
+  background: #fff;
+  border-right: 1px solid #222;
+  border-bottom: 1px solid #222;
+  text-decoration: none;
+  color: #111;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: background 0.15s;
+}
+
+.project-card span {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.project-card:hover {
+  background: #f7f7f7;
+  color: #111;
+}
+
+/* Footer centralizado */
+footer {
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  font-size: 0.95rem;
+  color: #2e2e2e;
+  margin-top: auto;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+  }
+}
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 95vw;
+  }
+  .page-title {
+    font-size: 1.5rem;
+    margin: 1.2rem 0 1rem 0;
+  }
+}
+
+.indexsub {
+  color: #363636;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.indexsub:hover {
+  color: #242424;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.sobresub {
+  color: #363636;
+}
+
+.contactsub {
+  color: #363636;
+}
