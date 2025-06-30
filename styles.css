@@ -408,11 +408,11 @@ main p {
   border-left: 1px solid #222;
 }
 
-/* Card de projeto estilo Balenciaga */
 .project-card {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   aspect-ratio: 1 / 1;
   min-height: 220px;
   background: #fff;
@@ -448,6 +448,15 @@ footer {
   color: #2e2e2e;
   margin-top: auto;
 }
+
+.project-card img {
+  max-width: 90%;  
+  max-height: 70%; 
+  height: auto;     
+  display: block;
+  margin: 0 auto;   
+}
+
 
 /* Responsivo */
 @media (max-width: 900px) {
@@ -490,3 +499,5 @@ footer {
 .contactsub {
   color: #363636;
 }
+
+
