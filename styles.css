@@ -28,17 +28,13 @@ nav.navbar {
   z-index: 1000;
 }
 
-/* Logo placeholder centralizado */
 .logo {
   width: 120px;
-  height: 120px;
-  border-radius: 1px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  height: auto; /* manter proporção */
   cursor: pointer;
-  flex-shrink: 0;
+  /* remove position absolute para teste */
 }
+
 
 /* Checkbox invisível para controlar o menu */
 .menu-toggle {
@@ -498,5 +494,3 @@ footer {
 .contactsub {
   color: #363636;
 }
-
-
