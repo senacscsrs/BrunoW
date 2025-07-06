@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boair | Encontre voos, hotéis e carros</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <h1>Boair</h1>
+      <nav>
+        <button class="nav-btn">Passagens aéreas</button>
+        <button class="nav-btn">Hotéis</button>
+        <button class="nav-btn">Aluguel de carro</button>
+      </nav>
+    </div>
+    <div class="hero">
+      <h2>Fazendo o simples, voando o maximo.</h2>
+      <div class="search-box">
+        <!-- Flight Search Form -->
+        <form id="searchForm">
+          <input list="origens" name="origem" placeholder="Origem" required />
+          <datalist id="origens">
+            <option value="São Paulo (GRU)">
+            <option value="Rio de Janeiro (GIG)">
+            <option value="Brasília (BSB)">
+            <option value="Buenos Aires (EZE)">
+            <option value="Santiago (SCL)">
+            <option value="Lima (LIM)">
+            <option value="Bogotá (BOG)">
+            <option value="Cidade do México (MEX)">
+            <option value="Nova York (JFK)">
+            <option value="Nova York (EWR)">
+            <option value="Miami (MIA)">
+            <option value="Orlando (MCO)">
+            <option value="Los Angeles (LAX)">
+            <option value="Chicago (ORD)">
+            <option value="Houston (IAH)">
+            <option value="Atlanta (ATL)">
+            <option value="Toronto (YYZ)">
+            <option value="Vancouver (YVR)">
+            <option value="Londres (LHR)">
+            <option value="Londres (LGW)">
+            <option value="Paris (CDG)">
+            <option value="Frankfurt (FRA)">
+            <option value="Amsterdã (AMS)">
+            <option value="Madri (MAD)">
+            <option value="Lisboa (LIS)">
+            <option value="Roma (FCO)">
+            <option value="Milão (MXP)">
+            <option value="Zurique (ZRH)">
+            <option value="Genebra (GVA)">
+            <option value="Dubai (DXB)">
+            <option value="Istambul (IST)">
+            <option value="Doha (DOH)">
+            <option value="Pequim (PEK)">
+            <option value="Xangai (PVG)">
+            <option value="Hong Kong (HKG)">
+            <option value="Tóquio (NRT)">
+            <option value="Tóquio (HND)">
+            <option value="Seul (ICN)">
+            <option value="Bangkok (BKK)">
+            <option value="Singapura (SIN)">
+            <option value="Sydney (SYD)">
+            <option value="Melbourne (MEL)">
+            <option value="Joanesburgo (JNB)">
+            <option value="Cidade do Cabo (CPT)">
+            <option value="Auckland (AKL)">
+            <option value="Munique (MUC)">
+            <option value="Bruxelas (BRU)">
+            <option value="Boston (BOS)">
+            <option value="San Francisco (SFO)">
+            <option value="Dallas (DFW)">
+          </datalist>
+
+          <input list="destinos" name="destino" placeholder="Destino" required />
+          <datalist id="destinos">
+            <option value="São Paulo (GRU)">
+            <option value="Rio de Janeiro (GIG)">
+            <option value="Brasília (BSB)">
+            <option value="Buenos Aires (EZE)">
+            <option value="Santiago (SCL)">
+            <option value="Lima (LIM)">
+            <option value="Bogotá (BOG)">
+            <option value="Cidade do México (MEX)">
+            <option value="Nova York (JFK)">
+            <option value="Nova York (EWR)">
+            <option value="Miami (MIA)">
+            <option value="Orlando (MCO)">
+            <option value="Los Angeles (LAX)">
+            <option value="Chicago (ORD)">
+            <option value="Houston (IAH)">
+            <option value="Atlanta (ATL)">
+            <option value="Toronto (YYZ)">
+            <option value="Vancouver (YVR)">
+            <option value="Londres (LHR)">
+            <option value="Londres (LGW)">
+            <option value="Paris (CDG)">
+            <option value="Frankfurt (FRA)">
+            <option value="Amsterdã (AMS)">
+            <option value="Madri (MAD)">
+            <option value="Lisboa (LIS)">
+            <option value="Roma (FCO)">
+            <option value="Milão (MXP)">
+            <option value="Zurique (ZRH)">
+            <option value="Genebra (GVA)">
+            <option value="Dubai (DXB)">
+            <option value="Istambul (IST)">
+            <option value="Doha (DOH)">
+            <option value="Pequim (PEK)">
+            <option value="Xangai (PVG)">
+            <option value="Hong Kong (HKG)">
+            <option value="Tóquio (NRT)">
+            <option value="Tóquio (HND)">
+            <option value="Seul (ICN)">
+            <option value="Bangkok (BKK)">
+            <option value="Singapura (SIN)">
+            <option value="Sydney (SYD)">
+            <option value="Melbourne (MEL)">
+            <option value="Joanesburgo (JNB)">
+            <option value="Cidade do Cabo (CPT)">
+            <option value="Auckland (AKL)">
+            <option value="Munique (MUC)">
+            <option value="Bruxelas (BRU)">
+            <option value="Boston (BOS)">
+            <option value="San Francisco (SFO)">
+            <option value="Dallas (DFW)">
+          </datalist>
+          <input type="date" required />
+          <input type="date" required />
+          <select>
+            <option value="econ">Econômica</option>
+            <option value="executiva">Executiva</option>
+          </select>
+          <button type="submit">Buscar</button>
+        </form>
+
+        <!-- Hotel Search Form (hidden by default) -->
+        <form id="hotelForm" style="display:none;">
+          <input type="text" name="hotel-destino" placeholder="Destino" required />
+          <input type="date" name="hotel-checkin" required />
+          <input type="date" name="hotel-checkout" required />
+          <input type="number" name="hotel-quartos" min="1" value="1" placeholder="Quartos" required />
+          <button type="submit">Buscar Hotéis</button>
+        </form>
+
+        <!-- Car Rental Search Form (hidden by default) -->
+        <form id="carForm" style="display:none;">
+          <input type="text" name="car-local" placeholder="Local de retirada" required />
+          <input type="date" name="car-retirada" required />
+          <input type="date" name="car-devolucao" required />
+          <button type="submit">Buscar Carros</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="offers">
+      <h2>Ofertas saindo do Brasil</h2>
+      <div class="offer-grid">
+        <div class="card">
+          <img src="imgs/rio.jpg" alt="Rio de Janeiro" />
+          <h3>Rio de Janeiro</h3>
+          <p>A partir de R$ 560</p>
+          <p><strong>Hotel popular:</strong> Copacabana Palace (+R$ 900/noite)</p>
+          <p><strong>Carro:</strong> Econômico (+R$ 80/dia)</p>
+        </div>
+        <div class="card">
+          <img src="imgs/london.jpg" alt="Londres" />
+          <h3>Londres</h3>
+          <p>A partir de R$ 2.300</p>
+          <p><strong>Hotel popular:</strong> The Ritz (+R$ 2.000/noite)</p>
+          <p><strong>Carro:</strong> Hatch (+R$ 120/dia)</p>
+        </div>
+        <div class="card">
+          <img src="imgs/ny.avif" alt="Nova York" />
+          <h3>Nova York</h3>
+          <p>A partir de R$ 1.450</p>
+          <p><strong>Hotel popular:</strong> Marriott Marquis (+R$ 1.500/noite)</p>
+          <p><strong>Carro:</strong> Sedan (+R$ 110/dia)</p>
+        </div>
+        <div class="card">
+          <img src="imgs/buenos.webp" alt="Buenos Aires" />
+          <h3>Buenos Aires</h3>
+          <p>A partir de R$ 800</p>
+          <p><strong>Hotel popular:</strong> Alvear Palace (+R$ 700/noite)</p>
+          <p><strong>Carro:</strong> Econômico (+R$ 70/dia)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hotel Offers Section -->
+    <section class="offers">
+      <h2>Ofertas de Hotéis</h2>
+      <div class="offer-grid">
+        <div class="card">
+          <img src="imgs/copacabana.jpg" alt="Hotel Copacabana Palace" />
+          <h3>Copacabana Palace, Rio</h3>
+          <p>A partir de R$ 900/noite</p>
+        </div>
+        <div class="card">
+          <img src="imgs/fasano.avif" alt="Hotel Fasano" />
+          <h3>Fasano, São Paulo</h3>
+          <p>A partir de R$ 1.200/noite</p>
+        </div>
+        <!-- ...more hotel offers... -->
+      </div>
+    </section>
+
+    <!-- Car Rental Offers Section -->
+    <section class="offers">
+      <h2>Ofertas de Aluguel de Carros</h2>
+      <div class="offer-grid">
+        <div class="card">
+          <img src="imgs/economico.jpg" alt="Econômico" />
+          <h3>Econômico</h3>
+          <p>A partir de R$ 80/dia</p>
+        </div>
+        <div class="card">
+          <img src="imgs/suv.jpg" alt="SUV" />
+          <h3>SUV</h3>
+          <p>A partir de R$ 150/dia</p>
+        </div>
+        <!-- ...more car offers... -->
+      </div>
+    </section>
+
+    <section class="subscribe">
+      <h3>Receba promoções por e-mail e SMS</h3>
+      <form id="subscribeForm">
+        <input type="email" placeholder="Seu e-mail" required />
+        <input type="tel" placeholder="Seu telefone" required />
+        <button type="submit">Cadastrar</button>
+      </form>
+    </section>
+
+    <section class="faq">
+      <h3>Perguntas frequentes</h3>
+      <details>
+        <summary>Como encontrar as melhores ofertas de voo?</summary>
+        <p>Use nossa busca inteligente, que compara preços de centenas de sites em segundos.</p>
+      </details>
+      <details>
+        <summary>É seguro reservar pelo site?</summary>
+        <p>Sim! Todos os dados são criptografados com tecnologia de ponta.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Boair. Todos os direitos reservados.</p>
+    <p>Contato: comercial@boair.com</p>
+    <a href="../projectse.html" class="voltar">Voltar ao Projetos</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

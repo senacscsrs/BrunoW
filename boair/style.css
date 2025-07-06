@@ -1,0 +1,237 @@
+/* Reset e fontes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(to right, #004e92, #000428);
+  color: white;
+  padding: 20px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header-top h1 {
+  font-size: 2rem;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  background: #f5af19;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-btn:hover {
+  background: #ff9900;
+}
+
+.hero {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.search-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.search-box form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+input, select, button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  background-color: #004e92;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #003974;
+}
+
+.offers {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.offers h2 {
+  margin-bottom: 30px;
+  color: #004e92;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;      /* or any fixed height you prefer */
+  object-fit: cover;  /* ensures the image covers the area without distortion */
+  display: block;
+  border-radius: 8px; /* optional: for rounded corners */
+}
+
+.card h3 {
+  padding: 10px 15px 0;
+  color: #004e92;
+}
+
+.card p {
+  padding: 0 15px 15px;
+}
+
+.subscribe {
+  background: #ffffff;
+  padding: 30px;
+  margin: 40px 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.subscribe form {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.faq {
+  padding: 40px 20px;
+  background: #eef1f6;
+}
+
+.faq h3 {
+  color: #004e92;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.faq details {
+  margin-bottom: 10px;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+footer {
+  background-color: #000428;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+  .header-top h1 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
+}
+
+.footervoltar {
+    position: fixed; /* fixa no rodapé */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0; /* cor de fundo suave */
+    padding: 15px 0;
+    text-align: center; /* centraliza o conteúdo */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000; /* para ficar acima de outros elementos */
+}
+
+.voltar {
+    display: inline-block;
+    background-color: #140079;
+    color: #ededed;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    padding: 10px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    border: 2px solid #0d004e;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: 
+        background 0.2s,
+        color 0.2s,
+        box-shadow 0.2s,
+        transform 0.15s;
+}
+
+.voltar:hover {
+    background-color: #090038;
+    color: white;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    transform: translateY(-2px) scale(1.04);
+    border-color: #000;
+    font-style: normal; /* remove itálico no hover */
+}
