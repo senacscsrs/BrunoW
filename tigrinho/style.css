@@ -1,0 +1,98 @@
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.slot-machine {
+  background: #222;
+  padding: 30px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 0 20px #000;
+}
+
+#slots {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  letter-spacing: 10px;
+}
+
+#slots span {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.spinning {
+  animation: spin 0.2s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotateX(0); }
+  100% { transform: rotateX(360deg); }
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background: #ff3c3c;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff5c5c;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+#balance {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.footervoltar {
+    position: fixed; /* fixa no rodapé */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2b2b2b9f; /* cor de fundo suave */
+    padding: 15px 0;
+    text-align: center; /* centraliza o conteúdo */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000; /* para ficar acima de outros elementos */
+}
+
+.voltar {
+    display: inline-block;
+    background-color: rgb(59, 59, 59);
+    color: #ededed;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    padding: 10px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    border: 2px solid #222;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: 
+        background 0.2s,
+        color 0.2s,
+        box-shadow 0.2s,
+        transform 0.15s;
+}
+
+.voltar:hover {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    transform: translateY(-2px) scale(1.04);
+    border-color: #000;
+    font-style: normal; /* remove itálico no hover */
+}
