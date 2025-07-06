@@ -52,10 +52,10 @@ if (Math.random() < 0.2) {
     });
 
     if (slot1 === slot2 && slot2 === slot3) {
-      message.textContent = "🎉 JACKPOT! You won $50!";
+      message.textContent = "🎉 Vamosss! Você Ganhou $50!";
       balance += 50;
     } else {
-      message.textContent = "😢 No match. You lost $10.";
+      message.textContent = "😢 Nada... Você Perdeu $10.";
       balance -= 10;
     }
 
