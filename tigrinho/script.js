@@ -60,7 +60,7 @@ if (Math.random() < 0.2) {
     }
 
     if (balance <= 0) {
-      message.textContent = "💀 You're broke! Refresh to restart.";
+      message.textContent = "💀 Mn tu é mt ruim, F5 pra recomeçar";
       spinBtn.disabled = true;
       spinBtn.style.opacity = 0.5;
     }
