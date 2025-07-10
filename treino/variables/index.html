@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>red vs blue</title>
+    <style>
+       body {
+            display: flex;
+            align-content: center;
+            background-color: black;
+            flex-direction: column;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+       }
+       button {
+            font-size: larger;
+            margin: 20px;
+            align-self: center;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+        }
+
+        .blue {
+            background-color: blue;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .red {
+            background-color: red;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .blue:hover {
+            background-color: darkblue;
+        }
+
+        .red:hover {
+            background-color: darkred;
+        }
+
+        .team {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: white;
+            font-size: larger;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha sua equipe</h1>
+    <div class="buttons">
+        <button class="blue" onclick="blueClick(this)">blue</button>
+        <button class="red" onclick="redClick(this)">red</button>
+    </div>
+    <div class="team">
+        <p id="blueCount">Azul: 0</p>
+        <p id="redCount">Vermelho: 0</p>
+    </div>
+
+    <script>
+        let blueCount = 0;
+        let redCount = 0;
+        let hasChosen = false;
+
+        function blueClick(button) {
+            if (hasChosen) return;
+            alert('Você escolheu a equipe azul!');
+            blueCount++;
+            document.getElementById("blueCount").innerText = "Azul: " + blueCount;
+            hasChosen = true;
+            disableButtons();
+        }
+
+        function redClick(button) {
+            if (hasChosen) return;
+            alert('Você escolheu a equipe vermelha!');
+            redCount++;
+            document.getElementById("redCount").innerText = "Vermelho: " + redCount;
+            hasChosen = true;
+            disableButtons();
+        }
+
+        function disableButtons() {
+            document.querySelectorAll("button").forEach(btn => btn.disabled = true);
+        }
+    </script>
+</body>
+</html>
