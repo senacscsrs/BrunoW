@@ -8,8 +8,8 @@
 html, body {
   height: 100%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #fff;
-  color: #111;
+  background-color: #1b1b1b;
+  color: #dddddd;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +27,7 @@ html, body {
   font-weight: bold;
   margin-bottom: 1rem;
   letter-spacing: 0.05em;
-  color: #222;
+  color: #e7e7e7;
 }
 
 .error-title {
@@ -35,7 +35,7 @@ html, body {
   font-weight: bold;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  color: #555;
+  color: #d3d3d3;
 }
 
 .error-message {
