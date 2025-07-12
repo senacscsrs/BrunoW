@@ -80,7 +80,7 @@
         let hasChosen = false;
 
         function blueClick(button) {
-            if (hasChosen) return;
+            if (button.textContent == 'blue');
             alert('Você escolheu a equipe azul!');
             blueCount++;
             document.getElementById("blueCount").innerText = "Azul: " + blueCount;
@@ -89,7 +89,7 @@
         }
 
         function redClick(button) {
-            if (hasChosen) return;
+            if (button.textContent == 'red');
             alert('Você escolheu a equipe vermelha!');
             redCount++;
             document.getElementById("redCount").innerText = "Vermelho: " + redCount;
