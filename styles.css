@@ -8,8 +8,8 @@
 /* Corpo */
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: #161616;
-  color: #dddddd;
+  background: #222222;
+  color: #f8f8f8;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -390,7 +390,7 @@ main p {
   margin: 2.5rem 0 2rem 0;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #999;
+  color: #f7f7f7;
 }
 
 /* Grid centralizado, cards grudados */
@@ -411,11 +411,11 @@ main p {
   flex-direction: column;
   aspect-ratio: 1 / 1;
   min-height: 220px;
-  background: #5a5a5a;
+  background: #3f3f3f;
   border-right: 1px solid #222;
   border-bottom: 1px solid #222;
   text-decoration: none;
-  color: #111;
+  color: #f1f1f1;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 1.1rem;
@@ -432,8 +432,8 @@ main p {
 }
 
 .project-card:hover {
-  background: #6d6d6d;
-  color: #111;
+  background: #3a3a3a;
+  color: #f1f1f1;
 }
 
 /* Footer centralizado */
@@ -473,7 +473,7 @@ footer {
 }
 
 .indexsub {
-  color: #cacaca;
+  color: #dddddd;
   text-decoration: none;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: larger;
@@ -481,7 +481,7 @@ footer {
 }
 
 .indexsub:hover {
-  color: #9c9c9c;
+  color: #eeeeee;
   text-decoration: none;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: larger;
