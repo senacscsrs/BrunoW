@@ -2,11 +2,11 @@
 
 Este repositório reúne meus principais projetos desenvolvidos durante o curso técnico e ensino médio no **Senac-RS**, com foco em desenvolvimento web, lógica de programação e design de interfaces. Aqui você encontrará experimentos, sites, exercícios e protótipos de trabalhos reais ou simulados.
 
-## 👨‍💻 Sobre Mim
+##  Sobre Mim
 
 Sou estudante do **Senac Ensino Médio e Técnico**, apaixonado por tecnologia, design e desenvolvimento web. Tenho buscado aplicar o que aprendo na prática, com projetos variados que exploram HTML, CSS, JavaScript e muito mais.
 
-## 📂 Estrutura do Repositório
+##  Estrutura do Repositório
 
 - `index.html` – Página inicial do portfólio
 - `about.html`, `contact.html` – Páginas de navegação do site
@@ -19,21 +19,21 @@ Sou estudante do **Senac Ensino Médio e Técnico**, apaixonado por tecnologia, 
 - `09-06-25/`, `11-06-25/` – Pastas de atividades práticas por data
 - `primeirojs` - Estudo sobre JavaScript, (feito em casa)
 
-## 🚀 Alguns Projetos em Destaque
+##  Alguns Projetos em Destaque
 
 - **Boair** – Protótipo de um site de viagens/hospedagens com foco em layout limpo e funcionalidade básica.
 - **Currículo Online** – Projeto de site para exibir informações profissionais e acadêmicas.
 - **Testes de JS** – Pasta com testes de lógica, contadores, e experimentos em JavaScript.
 - **Páginas de Erro Personalizadas** – Trabalhos com feedback visual para navegação equivocada.
 
-## 🧰 Tecnologias Usadas
+##  Tecnologias Usadas
 
 - **HTML5**
 - **CSS3**
 - **JavaScript (básico)**
 - Git e GitHub Pages para versionamento e deploy
 
-## 🌐 Deploy
+##  Deploy
 
 Você pode visualizar meu portfólio online através do **GitHub Pages**:
 
@@ -41,5 +41,5 @@ Você pode visualizar meu portfólio online através do **GitHub Pages**:
 
 ---
 
-Obrigado por visitar meu repositório! 🚀
+Obrigado por visitar meu repositório! 
 
