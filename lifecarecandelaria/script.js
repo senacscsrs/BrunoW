@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   // Fade-in intersection observer (preserva seu código atual)
   const faders = document.querySelectorAll('.fade-in');
@@ -110,3 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const flag = 'prototypeAlertShown';   // nome da chave
+
+    if (!sessionStorage.getItem(flag)) {  // primeira visita nesta guia
+      alert('Você está visualizando um protótipo; qualquer mudança, mande um e‑mail para bhwojahn@outlook.com');
+      sessionStorage.setItem(flag, '1');  // grava para não repetir
+    }
+  });

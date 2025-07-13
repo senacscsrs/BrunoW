@@ -577,3 +577,19 @@ body, html {
   padding: 0.75rem 1.5rem;
 }
 
+.social-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    vertical-align: middle;
+    margin-top: 10px;
+    brightness: 1.5; /* slightly brighter */
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.7s ease-in-out;
+    content: url('imgs/icons8-instagram.svg'); /* Use the same icon for hover effect */";
+    brightness: 1.6; /* slightly brighter */
+}
+
