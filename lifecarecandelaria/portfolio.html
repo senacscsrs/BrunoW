@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nosso Trabalho | LifeCare Candelaria</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="imgs/Life-care---logotipo-principal---ÍCONE.png" />
+</head>
+<body>
+  <!-- HEADER / NAVEGAÇÃO -->
+  <header class="fade-in">
+    <nav class="container nav-bar">
+      <a href="index.html" aria-label="Logo LifeCare Candelaria">
+        <img src="imgs/Life-care---logotipo-principal.png" class="logo" alt="Logo LifeCare Candelaria" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="profissionais.html">Profissionais</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="portfolio.html" class="active">Nosso Trabalho</a></li>
+      </ul>
+
+      <a href="https://wa.me/5551996941935" class="btn-primary">Agendar</a>
+    </nav>
+  </header>
+
+  <!-- TÍTULO PRINCIPAL -->
+  <section class="fade-in">
+    <div class="container">
+      <h1 class="titleservicos">O que oferecemos?</h1>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="services fade-in">
+    <div class="cards container">
+      <div class="card">
+        <h3>Farmácia Estética</h3>
+        <img src="imgs/Life-care---logotipo-principal---ÍCONE.png" alt="Farmácia Estética" class="ofer-img" />
+        <button class="btn-primary open-modal" data-service="farmacia">Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>Podologia</h3>
+        <img src="imgs/Life-care---logotipo-principal---ÍCONE.png" alt="Podologia" class="ofer-img" />
+        <button class="btn-primary open-modal" data-service="podologia">Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>Nutrição</h3>
+        <img src="imgs/Life-care---logotipo-principal---ÍCONE.png" alt="Nutrição" class="ofer-img" />
+        <button class="btn-primary open-modal" data-service="nutricao">Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>Psiquiatria</h3>
+        <img src="imgs/Life-care---logotipo-principal---ÍCONE.png" alt="Psiquiatria" class="ofer-img" />
+        <button class="btn-primary open-modal" data-service="psiquiatria">Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>Fisioterapia</h3>
+        <img src="imgs/Life-care---logotipo-principal---ÍCONE.png" alt="Fisioterapia" class="ofer-img" />
+        <button class="btn-primary open-modal" data-service="fisioterapia">Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>Quiropraxia</h3>
+        <img src="imgs/Life-care---logotipo-principal---ÍCONE.png" alt="Quiropraxia" class="ofer-img" />
+        <button class="btn-primary open-modal" data-service="quiropraxia">Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>Massoterapia</h3>
+        <img src="imgs/Life-care---logotipo-principal---ÍCONE.png" alt="Massoterapia" class="ofer-img" />
+        <button class="btn-primary open-modal" data-service="massoterapia">Saiba Mais</button>
+      </div>
+
+      <div class="card">
+        <h3>Psicologia</h3>
+        <img src="imgs/Life-care---logotipo-principal---ÍCONE.png" alt="Psicologia" class="ofer-img" />
+        <button class="btn-primary open-modal" data-service="psicologia">Saiba Mais</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <div class="modal-window">
+      <button id="modalClose" class="modal-close" aria-label="Fechar">×</button>
+      <h2 id="modalTitle"></h2>
+      <img id="modalImg" src="" alt="" class="modal-img" />
+      <p id="modalDesc"></p>
+      <a id="modalLink" class="btn-primary" href="https://wa.me/5551996941935" target="_blank" rel="noopener noreferrer">Reservar horário</a>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer class="fade-in">
+    <p>&copy; 2025 LifeCare Candelaria. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

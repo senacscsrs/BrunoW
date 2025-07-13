@@ -90,6 +90,7 @@ header {
 
 .btn-primary:hover {
     background: var(--gold);
+    color: #ffffff;
 }
 
 /* Hero */
@@ -432,3 +433,141 @@ body, html {
     margin-left: 20px;
     margin-top: 10px;
 }
+
+.ofer-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.titleservicos {
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    margin-top: 1rem;
+}
+
+/* =========================================================
+   MODAL – janela central “Saiba Mais”
+   ========================================================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;                 /* escondido por padrão */
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.show {
+    display: flex;                 /* ativado via JS */
+}
+
+.modal-window {
+    background: var(--white);
+    width: min(90%, 500px);
+    padding: 2rem 1.5rem 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    position: relative;
+    animation: pop 0.35s ease-out;
+}
+
+@keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--purple);
+    cursor: pointer;
+}
+
+.modal-img {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   PEQUENO AJUSTE NO TÍTULO DE SERVIÇOS
+   ========================================================= */
+.titleservicos {
+    color: var(--gold);
+    font-size: 2rem;        /* um pouco maior */
+    margin: 2rem auto 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    max-width: 800px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none; /* mostrado via JS */
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 1rem;
+}
+
+.modal-window {
+  background: white;
+  border-radius: 8px;
+  max-width: 500px;     /* largura máxima */
+  width: 90vw;          /* largura responsiva */
+  max-height: 80vh;     /* altura máxima do modal */
+  overflow-y: auto;     /* scroll vertical se conteúdo passar */
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+}
+
+.modal-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: var(--gold);
+}
+
+/* Botão Reservar dentro do modal */
+.modal-window .btn-primary {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
