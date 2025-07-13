@@ -355,69 +355,60 @@ body, html {
   }
 }
 
-/* Hero Responsive */
-@media (max-width: 768px) {
-  .hero {
-    padding: 4rem 1rem;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-/* Cards Responsive */
-@media (max-width: 600px) {
-  .cards {
-    grid-template-columns: 1fr;
+/* Navbar stays horizontal on all devices */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 1rem;
-  }
+    padding: 1rem 0;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto;  /* Allow horizontal scroll if too wide */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-/* Sobre Page Responsive */
-@media (max-width: 600px) {
-  .about {
-    padding: 2rem 1rem 3rem;
-    margin-bottom: 2rem;
-  }
-
-  .about h1 {
-    font-size: 1.8rem;
-  }
-
-  .about h2 {
-    font-size: 1.3rem;
-    padding-left: 0.5rem;
-    border-left-width: 4px;
-  }
-
-  .about p,
-  .about ul {
-    font-size: 1rem;
-  }
+/* Nav links as horizontal scroll on small screens */
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap; /* no wrapping */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Profissionais layout responsive */
-@media (max-width: 768px) {
-  .professional-list .pro-row,
-  .professional-list .pro-row:nth-child(even) {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .pro-img {
-    width: 160px;
-    height: 160px;
-  }
+/* Make the scroll bar hidden for cleaner look (optional) */
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+.nav-links {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
 }
 
-@media (max-width: 400px) {
-  .pro-img {
-    width: 130px;
-    height: 130px;
-  }
+/* Button stays normal, no full width on mobile */
+.btn-primary {
+    white-space: nowrap;
+}
+
+/* Smaller logo on phones */
+@media (max-width: 480px) {
+    .logo {
+        height: 40px;
+        margin-right: 0.5rem;
+    }
+    
+    /* Slightly smaller nav links font */
+    .nav-links li a {
+        font-size: 0.9rem;
+    }
+
+    /* Reduce gap to save space */
+    .nav-links {
+        gap: 0.75rem;
+    }
+
+    .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
 }
