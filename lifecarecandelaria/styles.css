@@ -1,7 +1,7 @@
 :root {
     --white: #ffffff;
-    --gold: #d4af37;
-    --purple: #6a1b9a;
+    --gold: #b17d2b;
+    --purple: #3C1053;
     --text: #333333;
 }
 
@@ -411,4 +411,24 @@ body, html {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
+}
+
+.proftitle {
+    color: var(--purple);
+}
+
+.desc {
+    margin-top: 9px;
+}
+
+.projectstitle {
+    color: var(--purple);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 10px;
 }
