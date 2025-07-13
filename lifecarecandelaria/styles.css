@@ -51,11 +51,15 @@ header {
     gap: 1rem;
     padding: 1rem 0;
     flex-wrap: wrap;
+    overflow: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 75px; /* fixed height for consistency */
 }
 
 /* Logo Image Style */
 .logo {
-    height: 50px;      /* Adjust this size as needed */
+    height: 74px;      /* Adjust this size as needed */
     width: auto;
     display: block;
     object-fit: contain;
@@ -66,10 +70,12 @@ header {
     list-style: none;
     display: flex;
     gap: 1rem;
+    
 }
 
 .nav-links li a {
     font-weight: 500;
+    
 }
 
 .nav-links li a.active {
