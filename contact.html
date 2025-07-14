@@ -1,63 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sobre - Bruno Wojahn</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Modo claro favicon -->
-  <link rel="icon" href="imgs/logoblack.png" media="(prefers-color-scheme: light)">
-  <!-- Modo escuro favicon -->
-  <link rel="icon" href="imgs/logowhite.png" media="(prefers-color-scheme: dark)">
-</head>
-<body>
-  <nav class="navbar">
-    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-    <label for="menu-toggle" class="hamburger" aria-label="Abrir menu" tabindex="0">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contato · Bruno Wojahn</title>
 
-     <a href="index.html" aria-label="Logo Bruno Wojahn">
-  <img src="imgs/logo.png" class="logo" alt="Logo Bruno Wojahn">
-</a>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="styles.css" />
 
-    <ul class="menu">
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="about.html">SOBRE</a></li>
-      <li><a href="contact.html">CONTATO</a></li>
-      <li class="dropdown">
-        <a href="#" tabindex="0">PROJETOS</a>
-        <ul class="submenu">
-          <li><a href="projectsp.html">PESSOAIS</a></li>
-          <li><a href="projectse.html">ESCOLARES</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+    <!-- Favicon claro/escuro -->
+    <link rel="icon" href="imgs/logoblack.png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="imgs/logowhite.png" media="(prefers-color-scheme: dark)" />
+  </head>
 
-  <main>
-    <div class="form-container">
-    <h2>Formulário de Contato</h2>
-    <form action="https://formspree.io/f/xgvybzwo" method="post">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
+  <body>
+    <!-- ---------- NAVBAR ---------- -->
+    <nav class="navbar">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="hamburger" aria-label="Abrir menu" tabindex="0">
+        <span></span><span></span><span></span>
+      </label>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <a href="index.html" aria-label="Logo Bruno Wojahn">
+        <img src="imgs/logo.png" class="logo" alt="Logo Bruno Wojahn" />
+      </a>
 
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+      <ul class="menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">SOBRE</a></li>
+        <li><a href="contact.html">CONTATO</a></li>
+        <li class="dropdown">
+          <a href="#" tabindex="0">PROJETOS</a>
+          <ul class="submenu">
+            <li><a href="projectsp.html">PESSOAIS</a></li>
+            <li><a href="projectse.html">ESCOLARES</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-  </main>
+    <!-- ---------- CONTEÚDO ---------- -->
+    <main>
+      <!-- Botão que abre o modal -->
+      <button class="open-modal" data-service="form">Abrir Formulário de Contato</button>
+    </main>
 
-  <footer>
-    <p>© 2025 Bruno Wojahn</p>
-  </footer>
-</body>
+    <!-- O modal é injetado dinamicamente pelo script.js -->
+
+    <!-- ---------- SCRIPTS ---------- -->
+    <script src="script.js" defer></script>
+  </body>
 </html>
-

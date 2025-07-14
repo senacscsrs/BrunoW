@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Criar modal no HTML se não tiver (pode já estar no seu html)
   let modalHTML = `
   <div id="modalOverlay" class="modal-overlay" style="display:none;">
     <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
