@@ -13,6 +13,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  cursor: crosshair;
 }
 
 /* Navbar sticky no topo */
@@ -31,12 +32,9 @@ nav.navbar {
 .logo {
   width: 120px;
   height: auto; /* manter proporção */
-  cursor: pointer;
-  /* remove position absolute para teste */
+  cursor: crosshair;
 }
 
-
-/* Checkbox invisível para controlar o menu */
 .menu-toggle {
   display: none;
 }
@@ -47,7 +45,7 @@ nav.navbar {
   left: 1rem;
   width: 30px;
   height: 22px;
-  cursor: pointer;
+  cursor: crosshair;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -60,6 +58,7 @@ nav.navbar {
   background: white;
   border-radius: 2px;
   transition: 0.3s;
+  cursor: crosshair;
 }
 
 /* Transform hamburger em X quando ativo */
@@ -114,12 +113,14 @@ nav.navbar {
 .menu > li > a:focus {
   background: #333;
   outline: none;
+  cursor: crosshair;
 }
 
 /* Dropdown submenu */
 .dropdown > a::after {
   content: " ▼";
   font-size: 0.7em;
+  cursor: crosshair;
 }
 
 /* Submenu */
@@ -136,12 +137,14 @@ nav.navbar {
   box-shadow: 0 6px 16px rgba(0,0,0,0.6); /* sombra mais suave e maior */
   z-index: 1001;
   padding: 0.75rem 0; /* padding vertical para espaçamento */
+  cursor: crosshair;
 }
 
 /* Mostrar submenu ao hover ou foco */
 .dropdown:hover > .submenu,
 .dropdown:focus-within > .submenu {
   display: flex;
+  cursor: crosshair;
 }
 
 /* Itens do submenu */
@@ -155,6 +158,7 @@ nav.navbar {
   transition: background-color 0.3s ease;
   border-radius: 4px; /* cantos arredondados nos links */
   display: block;
+  cursor: crosshair;
 }
 
 /* Apenas muda a cor de fundo no hover/focus, sem alterar tamanho */
@@ -162,6 +166,7 @@ nav.navbar {
 .submenu li a:focus {
   background-color: #444; /* cor de fundo mais clara para destacar */
   outline: none;
+  cursor: crosshair;
 }
 
 /* Main content */
@@ -250,6 +255,7 @@ main {
 .project-link:hover {
   text-decoration: none;
   color: #111;
+  cursor: crosshair;
 }
 
 /* About content */
@@ -313,6 +319,7 @@ main {
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   transform: translateY(-2px) scale(1.04);
   border-color: #000;
+  cursor: crosshair;
 }
 
 /* Footer */
@@ -434,6 +441,7 @@ main p {
 .project-card:hover {
   background: #3a3a3a;
   color: #f1f1f1;
+  cursor: crosshair;
 }
 
 /* Footer centralizado */
@@ -486,6 +494,7 @@ footer {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: larger;
   font-weight: bold;
+  cursor: crosshair;
 }
 
 .sobresub {
@@ -545,6 +554,7 @@ button {
 
 button:hover {
   background-color: #45a049;
+  cursor: crosshair;
 }
 
 /* --------------------  Modal (contact form)  -------------------- */
@@ -628,4 +638,97 @@ button:hover {
 @media(max-width:480px){
   .modal-content{padding:1.5rem;}
 }
+
+/* ------------------ Preloader (logo + progress) ------------------ */
+#preloader{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#111;
+  z-index:3000;
+  transition:opacity 1s ease;
+}
+
+#preloader.fade-out{
+  opacity:0;
+  pointer-events:none;
+   transition: opacity 1s ease;
+}
+
+/* button just to keep logo centered & optional click */
+.logo-btn{
+  position:relative;
+  width:160px;
+  height:160px;
+  border:none;
+  background:none;
+  padding:0;
+  cursor:default;
+}
+
+/* the logo */
+.logo-btn img{
+  position:absolute;
+  top:50%; left:50%;
+  width:90px; height:auto;
+  transform:translate(-50%,-50%);
+  filter:drop-shadow(0 0 6px rgba(255,255,255,.6));
+}
+
+/* SVG circle geometry */
+.progress-circle{
+  transform:rotate(-90deg);       /* start at top */
+}
+
+/* track (static) */
+.track{
+  fill:none;
+  stroke:#333;
+  stroke-width:10;
+}
+
+/* progress ring (animated) */
+.progress{
+  fill:none;
+  stroke:#4CAF50;
+  stroke-width:10;
+  stroke-linecap:round;
+  stroke-dasharray:465;           /* 2πr ~ 2*3.14*74 */
+  stroke-dashoffset:465;
+  animation:fillRing 2s linear forwards;
+}
+
+/* animation — decreases dashoffset to 0 */
+@keyframes fillRing{
+  to{stroke-dashoffset:0;}
+}
+
+/* overlay some quando ganha .fade-out */
+#preloader.fade-out{
+  opacity:0;
+  visibility:hidden;   /* remove da árvore de pintura */
+  pointer-events:none; /* garante clique no site       */
+  transition:opacity .6s ease;
+}
+
+.progress{                         /* o anel que enche */
+  animation:fillRing 2s linear forwards;
+}
+
+@keyframes fillRing{              /* nome EXATO usado acima */
+  to{ stroke-dashoffset:0; }
+}
+
+#preloader{                       /* overlay */
+  transition:opacity .6s ease;
+}
+#preloader.fade-out{
+  opacity:0;
+  pointer-events:none;
+  visibility:hidden;
+}
+
+
 

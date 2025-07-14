@@ -10,9 +10,18 @@
   <link rel="icon" href="imgs/logoblack.png" media="(prefers-color-scheme: light)">
   <!-- Modo escuro favicon -->
   <link rel="icon" href="imgs/logowhite.png" media="(prefers-color-scheme: dark)">
-
 </head>
 <body>
+ <div id="preloader">
+  <button class="logo-btn" aria-label="Loading…">
+    <svg class="progress-circle" width="160" height="160">
+      <circle class="track"   cx="80" cy="80" r="74"/>
+      <circle class="progress" cx="80" cy="80" r="74"/>
+    </svg>
+    <img src="imgs/logo.png" alt="Logo Bruno Wojahn"/>
+  </button>
+</div>
+
   <nav class="navbar">
     <input type="checkbox" id="menu-toggle" class="menu-toggle" />
     <label for="menu-toggle" class="hamburger" aria-label="Abrir menu" tabindex="0">
@@ -47,5 +56,6 @@
       <footer>
           <p>© 2025 Bruno Wojahn</p>
       </footer>
+      <script src="script.js" defer></script>
   </body>
 </html>
