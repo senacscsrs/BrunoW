@@ -12,40 +12,42 @@
 
   <!-- NAVBAR ----------------------------------------------------- -->
   <nav class="navbar">
-    <ul class="menu">
-      <li>
-        <a href="#top" class="logo">
-          <img src="imgs/logo.png" alt="Logo Bruno Wojahn" />
-        </a>
-      </li>
-      <li><a href="#sobre" class="navitems">Sobre</a></li>
-      <li><a href="#institucional" class="navitems">Institucional</a></li>
-      <li><a href="#pessoal" class="navitems">Pessoal</a></li>
-      <li><a href="#profissional" class="navitems">Profissional</a></li>
-      <li><a href="#contato" class="navitems">Contato</a></li>
-    </ul>
-  </nav>
+  <a href="#top" class="logo">
+    <img src="imgs/logo.png" alt="Logo Bruno Wojahn" />
+  </a>
+
+  <div class="navlinks">
+    <a href="#sobre"        class="navitem">Sobre</a>
+    <a href="#institucional" class="navitem">Institucional</a>
+    <a href="#pessoal"       class="navitem">Pessoal</a>
+    <a href="#profissional"  class="navitem">Profissional</a>
+    <a href="#contato"       class="navitem">Contato</a>
+  </div>
+</nav>
 
   <!-- SOBRE ------------------------------------------------------ -->
-  <section id="sobre" class="sobre">
-    <div class="titlescreen" id="top">
-      <h1 class="maintitle">Eu sou o Bruno!</h1>
-      <h2 class="mainsubtitle">
-        Mas o que eu faço? Eu utilizo HTML, CSS e JavaScript para criar sites funcionais,
-        responsivos e completos para você ou seu negócio digital.
-      </h2>
-      <img src="imgs/logo.png" alt="Bruno Wojahn" class="personalphoto" />
-    </div>
-  </section>
+  <!-- SOBRE ------------------------------------------------------ -->
+<section id="sobre" class="sobre">
+  <div class="sobretext">
+    <h1 class="maintitle">Eu sou o Bruno!</h1>
+    <h2 class="mainsubtitle">
+      Mas o que eu faço? Eu utilizo HTML, CSS e JavaScript para criar sites funcionais,
+      responsivos e completos para você ou seu negócio digital.
+    </h2>
+  </div>
+  <img src="imgs/logo.png" alt="Bruno Wojahn" class="personalphoto" />
+  <!-- NENHUM <button class="spinBtn"> aqui -->
+</section>
+
 
   <hr><!-- temporário -->
 
   <!-- INSTITUCIONAL --------------------------------------------- -->
-  <section id="institucional" class="institucional-section">
+  <section id="institucional" class="institucional">
     <h2>Projetos Institucionais</h2>
 
     <button class="spinBtn" aria-label="Girar barril">
-      <img class="barrelImg" src="imgs/barril.png" alt="Barril de arma" />
+      <img class="barrelImg" src="imgs/revolver.png" alt="Barril de arma" />
     </button>
 
     <div class="projects-container">
@@ -138,6 +140,5 @@
     <h2 class="section-title">Contato</h2>
     <button class="formopen">Gostou do que viu? Entre em contato comigo!</button>
   </section>
-
 </body>
 </html>

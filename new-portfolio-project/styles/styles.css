@@ -2,37 +2,176 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #161616;
+    background-color: #000000;
     color: #a3c3ff;
     cursor: crosshair;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-nav.navbar {
-  position: sticky;
+/* barra centralizada na página */
+.navbar {
+  position: fixed;
   top: 0;
-  background: #000;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px; /* opcional para limitar largura máxima */
   height: 60px;
+  background: #000;
+  box-shadow: #a3c3ff 0 0 10px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  z-index: 1000;
+  margin-top: 25px;
+}
+
+
+/* grupo de links */
+.navlinks{
+  display:flex;
+  gap:30px;                 /* espaço entre links */
+}
+
+.navitem{
+  color:#ffffff;
+  text-decoration:none;
+  font-size:1.2rem;
+  transition:color .3s;
+}
+
+navitem:hover{
+  color:#fff;
+  cursor: crosshair;      
+  transform: scale(10px);        /* cor do link ao passar o mouse */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+  height: 100px; /* or width: 120px; adjust as needed */
+  object-fit: contain;
+}
+
+.navitem{
+  position: relative;                  /* necessário para ::after */
+  color:#ffffff;
+  text-decoration:none;
+  font-size:1.2rem;
+  transition:color .3s;
+}
+
+.navitem:hover{
+  color:#fff;
+  cursor: crosshair;      
+  transform: scale(1.1);
+  transition: transform 0.3s ease, color 0.3s ease;       /* cor do link ao passar o mouse */
+}
+
+/* linha escondida por padrão */
+.navitem::after{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  height:2px;
+  background:#a3c3ff;
+  bottom:-22px;      /* ajusta até encostar na base da navbar */
+  opacity:0;
+  transition:opacity .3s;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* mostra a linha só no link hover/focus */
+.navitem:hover::after,
+.navitem:focus::after{
+  opacity:1;
+}
+
+/* Seção de sobre */
+
+.sobre {
+  display: flex;
+  align-items: center;  /* alinha verticalmente no centro */
+  justify-content: space-between; /* espaço entre texto e imagem */
+  padding: 50px 10%;
+  height: 100vh; /* ocupa a altura da tela */
+  background-color: #000;
+  color: #a3c3ff;
+  box-sizing: border-box;
+}
+
+.sobretext {
+  flex: 1; /* ocupa espaço disponível à esquerda */
+  max-width: 600px; /* limita largura do texto */
+  padding-right: 20px; /* espaço entre texto e imagem */
+}
+
+.sobretext h1 {
+  margin: 0 0 20px 0;
+  font-size: 3rem;
+}
+
+.sobretext h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.personalphoto {
+  flex-shrink: 0; /* não deixa a imagem encolher */
+  width: 350px; /* largura fixa da imagem */
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(163, 195, 255, 0.7);
+  object-fit: cover;
+  grid-column: 2 / 3; /* ocupa a segunda coluna */
+}
+
+/* institucional */
+
+.institucional {
+  position: relative;
+  padding: 50px 10%;
+  background-color: #000;
+  color: #a3c3ff;
+  display: flex;
+  flex-direction: column; 
+  height: 100vh;
+}
+
+.spinBtn {
+  position: absolute;
+  top: 50%;      /* verticalmente centro da seção */
+  right: 0;      /* encostado à direita */
+  transform: translateY(-50%); /* ajusta centralização vertical */
+  
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* círculo completo */
+  background: #000;
+  box-shadow: 0 0 10px #a3c3ff;
+  cursor: pointer;
+  z-index: 1100;
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
-  z-index: 1000;
-  box-shadow: #a3c3ff;
-  cursor: crosshair;
+  padding: 0;
+  overflow: visible;
 }
 
-.menu {
-  list-style: none;
-  position: absolute;
-  top: 60px;
-  left: 1rem;
-  background: #ececec;
-  border-radius: 4px;
-  padding: 0.5rem 0;
-  width: 220px;
-  display: none;
-  flex-direction: column;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  z-index: 1000;
+.barrelImg {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
 }
