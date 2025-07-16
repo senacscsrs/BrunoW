@@ -1,251 +1,32 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000000;
-    color: #a3c3ff;
-    cursor: crosshair;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    overflow-x: hidden;
-}
-
-/* Wrapper enlarges the hover hitbox above navbar */
-.wrappernav {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1200px;
-    height: 75px;  /* bigger hover area */
-    cursor: default;
-    z-index: 1300;
-    cursor: crosshair;
-}
-
-/* Navbar absolutely positioned inside wrappernav */
-.navbar {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 100%;
-    max-width: 1200px;
-    height: 60px;
-    background: #000;
-    box-shadow: #a3c3ff 0 0 10px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1.5rem;
-    cursor: default;
-    box-sizing: border-box;
-
-    /* Start retracted: translateY(-45px) */
-    transform: translateX(-50%) translateY(-45px);
-    transition: transform 1s ease-in-out;
-    cursor: crosshair;
-}
-
-/* On hover over wrappernav, slide navbar down */
-.wrappernav:hover .navbar {
-    transform: translateX(-50%) translateY(30px);
-    cursor: crosshair;
-}
-
-/* grupo de links */
-.navlinks {
-    display: flex;
-    gap: 30px; /* espaço entre links */
-    cursor: crosshair;
-}
-
-.navitem {
-    position: relative; /* necessary for ::after */
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s, transform 0.3s ease;
-    cursor: crosshair;
-}
-
-.navitem:hover {
-    color: #fff;
-    cursor: crosshair;
-    transform: scale(1.1);
-    cursor: crosshair;
-}
-
-/* underline animation for navitem */
-.navitem::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #a3c3ff;
-    bottom: -22px; /* base of navbar */
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
-}
-
-.navitem:hover::after,
-.navitem:focus::after {
-    opacity: 1;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: crosshair;
-}
-
-.logo img {
-    height: 100px; /* adjust as needed */
-    object-fit: contain;
-    cursor: crosshair;
-}
-
-/* Seção de sobre */
-
-.sobre {
-  display: flex;
-  align-items: center;  /* alinha verticalmente no centro */
-  justify-content: space-between; /* espaço entre texto e imagem */
-  padding: 50px 10%;
-  height: 100vh; /* ocupa a altura da tela */
-  background-color: #000;
-  color: #a3c3ff;
-  box-sizing: border-box;
-}
-
-.sobretext {
-  flex: 1; 
-  max-width: 600px; 
-  padding-right: 20px; 
-  color: aliceblue;
-}
-
-.sobretext h1 {
-  margin: 0 0 20px 0;
-  font-size: 3rem;
-}
-
-.sobretext h2 {
   margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.4;
-}
-
-.personalphoto {
-  flex-shrink: 0; /* não deixa a imagem encolher */
-  width: 350px; /* largura fixa da imagem */
-  height: 350px; /* altura fixa da imagem */
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(163, 195, 255, 0.7);
-  object-fit: cover;
-  grid-column: 2 / 3; /* ocupa a segunda coluna */
-}
-
-
-
-/* institucional */
-
-.institucional {
-  position: relative;
-  padding: 50px 10%;
-  background-color: #000;
-  color: #a3c3ff;
-  display: flex;
-  flex-direction: column; 
-  height: 100vh;
-}
-
-/* seção continua com position: relative; */
-
-.spinBtn1 {
-  position: absolute; /* position relative to nearest positioned ancestor */
-  top: 50%;
-  right: -250px;
-  transform: translateY(-50%) scale(1);
-  transform-origin: center center;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: #000;
-  cursor: pointer;
-  z-index: 1100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0;
-  border: none;
-  box-shadow: none;
-  outline: none;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.spinBtn1:hover {
-  transform: translateY(-50%) scale(1.2);
-  cursor: crosshair;
-}
-
-.spinBtn1:focus {
-  outline: none;
-}
-
-.barrelImg1 {
-  width: 400px;
-  height: auto;
-  object-fit: contain;
-  user-select: none;
-  pointer-events: none;
-  transition: transform 0.3s ease;
-}
-
-.barrelImg1:hover {
-  transform: scale(1.2);
-  cursor: crosshair;
-}
-
-
-.pessoal-section,
-.profissional-section {
-  position: relative;
-}
-
-.institle1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: left;
-  position: relative;
-}
-
-/* institucional pronto */
-
-
-
-/* section projetos pessoais */
-
-.pessoal {
-  position: relative;
-  padding: 50px 10%;
+  font-family: Arial, sans-serif;
   background-color: #000;
   color: #a3c3ff;
-  display: flex;
-  flex-direction: column; 
-  height: 100vh;
+  cursor: crosshair;
+  overflow-x: hidden;
 }
 
-.navbar {
+/* Navbar */
+.wrappernav {
   position: fixed;
   top: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(-45px); /* start shifted up */
+  transform: translateX(-50%);
   width: 90%;
+  max-width: 1200px;
+  height: 75px;
+  z-index: 1300;
+  cursor: crosshair;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-45px);
+  width: 100%;
   max-width: 1200px;
   height: 60px;
   background: #000;
@@ -255,129 +36,138 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5rem;
-  z-index: 1200;
-  cursor: default;
-  
-  /* Animate the transform property */
   transition: transform 1s ease-in-out;
-}
-
-/* On hover, slide the navbar down */
-.navbar:hover {
-  transform: translateX(-50%) translateY(30px);
+  box-sizing: border-box;
   cursor: crosshair;
 }
 
-/* seção continua com position: relative; */
+.wrappernav:hover .navbar {
+  transform: translateX(-50%) translateY(30px);
+}
 
-.spinBtn2 {
-  position: absolute; /* position relative to nearest positioned ancestor */
-  top: 50%;
-  left: -250px;
-  transform: translateY(-50%) scale(1);
-  transform-origin: center center;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: #000;
-  cursor: pointer;
-  z-index: 1100;
+/* Links da navbar */
+.navlinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navitem {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navitem:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.navitem::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -22px;
+  height: 2px;
+  background: #a3c3ff;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.navitem:hover::after,
+.navitem:focus::after {
+  opacity: 1;
+}
+
+/* Logo */
+.logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  border: none;
-  box-shadow: none;
-  outline: none;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.spinBtn2:hover {
-  transform: translateY(-50%) scale(1.2);
-  cursor: crosshair;
-}
-
-.spinBtn2:focus {
-  outline: none;
-}
-
-.barrelImg2 {
-  width: 400px;
-  height: auto;
+.logo img {
+  height: 100px;
   object-fit: contain;
-  user-select: none;
-  pointer-events: none;
-  transition: transform 0.3s ease;
-  transform: rotate(90deg); /* rotaciona a imagem */
 }
 
-.barrelImg2:hover {
-  transform: scale(1.2);
-  cursor: crosshair;
+/* ----------- SEÇÃO SOBRE ----------- */
+.sobre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10%;
+  height: 100vh;
+  background: #000;
+  box-sizing: border-box;
 }
 
-.institle2 {
+.sobretext {
+  flex: 1;
+  max-width: 600px;
+  padding-right: 20px;
+  color: aliceblue;
+}
+
+.sobretext h1 {
+  margin-bottom: 20px;
+  font-size: 3rem;
+}
+
+.sobretext h2 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.personalphoto {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(163, 195, 255, 0.7);
+  flex-shrink: 0;
+}
+
+/* ----------- SEÇÃO INSTITUCIONAL ----------- */
+.institucional {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10%;
+  height: 100vh;
+  background: #000;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.institle1 {
   font-size: 2rem;
   margin-bottom: 20px;
-  text-align: right;
-  column: 2 / 3; /* ocupa a segunda coluna */
+  text-align: left;
 }
-
-/* seção projetos pessoais pronto */
-
-.pessoal {
-  position: relative;
-  padding: 50px 10%;
-  background-color: #000;
-  color: #a3c3ff;
-  display: flex;
-  flex-direction: column; 
-  height: 100vh;
-}
-
-
-/* section projetos profissionais */
-
-.profissional {
-  position: relative;
-  padding: 50px 10%;
-  background-color: #000;
-  color: #a3c3ff;
-  display: flex;
-  flex-direction: column; 
-  height: 100vh;
-}
-
-/* seção continua com position: relative; */
 
 .spinBtn1 {
-  position: absolute; /* position relative to nearest positioned ancestor */
+  position: absolute;
   top: 50%;
   right: -250px;
-  transform: translateY(-50%) scale(1);
-  transform-origin: center center;
+  transform: translateY(-50%);
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: #000;
-  cursor: pointer;
-  z-index: 1100;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
   border: none;
-  box-shadow: none;
   outline: none;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1100;
 }
 
 .spinBtn1:hover {
   transform: translateY(-50%) scale(1.2);
-}
-
-.spinBtn1:focus {
-  outline: none;
 }
 
 .barrelImg1 {
@@ -386,62 +176,135 @@ body {
   object-fit: contain;
   user-select: none;
   pointer-events: none;
+  transform: rotate(30deg);
   transition: transform 0.3s ease;
-  transform: rotate(-90deg); /* rotaciona a imagem */
 }
 
-.barrelImg1:hover {
-  transform: scale(1.2);
+/* ----------- SEÇÃO PESSOAL (invertida) ----------- */
+.pessoal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10%;
+  height: 100vh;
+  background: #000;
+  box-sizing: border-box;
+  position: relative;
+  flex-direction: row-reverse;
 }
 
-.institle {
+.institle2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.spinBtn2 {
+  position: absolute;
+  top: 50%;
+  left: -250px;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1100;
+}
+
+.spinBtn2:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.barrelImg2 {
+  width: 400px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  transform: rotate(30deg);
+  transition: transform 0.3s ease;
+}
+
+/* ----------- SEÇÃO PROFISSIONAL ----------- */
+.profissional {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10%;
+  height: 100vh;
+  background: #000;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.institle3 {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: left;
-  position: relative;
-  margin-top: 60px;
 }
 
+.spinBtn3 {
+  position: absolute;
+  top: 50%;
+  right: -250px;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1100;
+}
 
+.spinBtn3:hover {
+  transform: translateY(-50%) scale(1.2);
+}
 
-/* hidden and not hidden for the projects*/
+.barrelImg3 {
+  width: 400px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  transform: rotate(30deg);
+  transition: transform 0.3s ease;
+}
 
+/* ----------- PROJETOS DINÂMICOS ----------- */
 .project {
-    display: none;
+  display: none;
 }
 
 .project.visible {
-    display: block;
+  display: block;
 }
 
-.institucional,
-.pessoal,
-.profissional {
-  position: relative;
-}
-
-/* done hidden not hidden */
-
-
-/* contact */
-
-
+/* ----------- CONTATO ----------- */
 .contato {
   position: relative;
   padding: 50px 10%;
-  background-color: #000;
+  background: #000;
   color: #a3c3ff;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   height: fit-content;
-  padding: 30px;
 }
 
 .contacttitle {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
-  position: relative;
 }
 
 .formopen {
@@ -450,22 +313,19 @@ body {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   font-size: 1.2rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: crosshair;
 }
 
-/* footer */
-
+/* ----------- FOOTER ----------- */
 .footer {
-  background-color: #000; /* match your page background */
+  background: #000;
   color: #a3c3ff;
   text-align: center;
   padding: 20px 10%;
   font-size: 1rem;
   border-top: 1px solid #a3c3ff;
-  box-sizing: border-box;
   user-select: none;
 }
 
@@ -484,15 +344,9 @@ body {
 .footer-link:focus {
   color: #76a9ff;
   text-decoration: underline;
-  outline: none;
-  cursor: crosshair;
 }
 
-
-
-/* nav arrow */
-
-
+/* ----------- NAV SETAS ----------- */
 .nav-arrow {
   position: absolute;
   bottom: -70px;
@@ -500,135 +354,190 @@ body {
   transform: translateX(-50%);
   font-size: 2rem;
   color: #a3c3ff;
-  cursor: pointer;
   user-select: none;
   z-index: 1300;
-
-  /* increase hover area */
-  padding: 20px 30px;  /* add invisible space around the arrow */
-  background-color: transparent; /* keep background invisible */
-  
+  padding: 20px 30px;
+  background-color: transparent;
   animation: bounceUpDown 2s infinite ease-in-out;
 }
 
-
-/* Bounce keyframes: moves arrow up 8px and returns smoothly */
 @keyframes bounceUpDown {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-8px);
-  }
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
 }
 
-/* Optional: change color on hover */
 .nav-arrow:hover {
   color: #76a9ff;
-  cursor: crosshair;
 }
 
-/* The arrow toggle container */
+/* Toggle Arrow */
 .nav-toggle {
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #a3c3ff; /* arrow color */
-  cursor: pointer;
+  border-top: 10px solid #a3c3ff;
   position: absolute;
-  bottom: -25px;           /* position just below navbar */
+  bottom: -25px;
   left: 50%;
-  transform: translateX(-50%) rotate(0deg);
+  transform: translateX(-50%);
   transition: transform 0.3s ease;
   z-index: 1300;
-  user-select: none;
 }
 
-/* Rotate arrow 180deg when nav is open */
 .nav-toggle.open {
   transform: translateX(-50%) rotate(180deg);
 }
 
-/* modal contact form */
-
-.modal-overlay{
-  position:fixed;
-  inset:0;
-  display:none;                  /* JS troca pra flex quando abre   */
-  justify-content:center;
-  align-items:center;
-  padding:1.5rem;
-  background:rgba(0,0,0,0.8);    /* fundo escurecido                 */
-  z-index:2000;                  /* > z‑index da navbar (1000)       */
+/* ----------- MODAL FORM ----------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
 }
 
-.modal-content{
-  position:relative;
-  background:#000000;
-  color:#f8f8f8;
-  border-radius:10px;
-  width:min(90%,480px);
-  max-height:calc(100vh - 3rem);
-  overflow-y:auto;
-  padding:2rem 2.5rem;
-  box-shadow:0px 0px 20px #76a9ff;
-  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+.modal-content {
+  background: #000;
+  color: #f8f8f8;
+  border-radius: 10px;
+  width: min(90%, 480px);
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding: 2rem 2.5rem;
+  box-shadow: 0px 0px 20px #76a9ff;
 }
 
-/* Botão X */
-#modalClose{
-  position:absolute;
-  top:0.75rem;
-  right:1rem;
-  background:none;
-  border:none;
-  color:#fff;
-  font-size:2rem;
-  cursor:pointer;
-  line-height:1;
+#modalClose {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
-/* Campos do formulário dentro do modal */
-.modal-content label{
+.modal-content label {
   margin-top: 1rem;
-  display:block;
-  margin-bottom:0.5rem;
-  font-weight:bold;
-  color:#eee;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #eee;
 }
 
 .modal-content input,
-.modal-content textarea{
-  width:100%;
+.modal-content textarea {
+  width: 100%;
   margin-top: 0.5rem;
-  margin-bottom:1rem;
-  padding:0.75rem;
-  font-size:1rem;
-  border:1px solid #535353;
-  border-radius:5px;
-  background:#121212;
-  color:#f0f0f0;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #535353;
+  border-radius: 5px;
+  background: #121212;
+  color: #f0f0f0;
   box-shadow: #76a9ff 0 0 10px;
-  margin-left: -13px;
 }
 
-.modal-content button[type="submit"]{
-  background:#4CAF50;
-  border:none;
-  padding:0.8rem;
-  border-radius:5px;
-  cursor:pointer;
-  font-size:1rem;
-  color:#fff;
-  font-weight:bold;
-  width:100%;
-  transition:background 0.2s;
+.modal-content button[type="submit"] {
+  background: #4CAF50;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+  width: 100%;
+  transition: background 0.2s;
 }
 
-.modal-content button[type="submit"]:hover{
-  background:#45a049;
+.modal-content button[type="submit"]:hover {
+  background: #45a049;
 }
 
 
+/* ----- Estilização dos blocos de projeto ----- */
 
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  z-index: 100;
+  position: relative;
+  max-width: 700px;
+  padding: 40px 0;
+}
+
+.project {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  border-left: 4px solid #76a9ff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(118, 169, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(118, 169, 255, 0.4);
+}
+
+.project p {
+  color: #dce8ff;
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.project a {
+  color: #a3c3ff;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.project a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Alinhamento da .projects-container para cada seção */
+.institucional .projects-container {
+  margin-right: auto; /* texto à esquerda, botão à direita */
+}
+
+.pessoal .projects-container {
+  margin-left: auto; /* texto à direita, botão à esquerda */
+  text-align: right;
+}
+
+.profissional .projects-container {
+  margin-right: auto; /* texto à esquerda, botão à direita */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .projects-container {
+    max-width: 100%;
+    padding: 20px 10px;
+  }
+
+  .pessoal .projects-container {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .project {
+    padding: 16px 18px;
+  }
+}

@@ -42,3 +42,74 @@ const services = {
   modalClose.addEventListener('click', closeModal);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.style.display === 'flex') closeModal(); });
+
+
+//BOTÃO SPIN BTN
+
+// BOTÃO SPIN BTN
+document.addEventListener('DOMContentLoaded', () => {
+  const buttonData = {
+    spinBtn1: {
+      barrelClass: 'barrelImg1',
+      projects: [
+        'institucional-helloworld',
+        'institucional-imagens-etamanhos',
+        'institucional-boair',
+      ],
+    },
+    spinBtn2: {
+      barrelClass: 'barrelImg2',
+      projects: [
+        'pessoal-redvsblue',
+        'pessoal-placeholder1',
+        'pessoal-placeholder2',
+      ],
+    },
+    spinBtn3: {
+      barrelClass: 'barrelImg3',
+      projects: [
+        'profissional-lifecare',
+        'profissional-placeholder1',
+        'profissional-placeholder2',
+      ],
+    },
+  };
+
+  const state = {
+    spinBtn1: { rotation: 30, index: 0, clicks: 0 },
+    spinBtn2: { rotation: 30, index: 0, clicks: 0 },
+    spinBtn3: { rotation: 30, index: 0, clicks: 0 },
+  };
+
+  function showProject(projectIds, visibleIndex) {
+    projectIds.forEach((id, idx) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.toggle('visible', idx === visibleIndex);
+    });
+  }
+
+  Object.entries(buttonData).forEach(([btnId, data]) => {
+    const btn = document.querySelector(`button.${btnId}`);
+    const barrelImg = btn?.querySelector(`.${data.barrelClass}`);
+    if (!btn || !barrelImg) return;
+
+    // Inicializar rotação
+    barrelImg.style.transform = `rotate(30deg)`;
+
+    // Mostrar primeiro projeto
+    showProject(data.projects, 0);
+
+    btn.addEventListener('click', () => {
+      const st = state[btnId];
+      st.clicks++;
+      st.rotation += 60;
+      st.index = (st.index + 1) % data.projects.length;
+
+      barrelImg.style.transform = `rotate(${st.rotation}deg)`;
+      barrelImg.style.transition = 'transform 0.5s ease-in-out';
+
+      showProject(data.projects, st.index);
+    });
+  });
+});
