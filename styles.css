@@ -4,7 +4,7 @@ html {
 
 html, body {
   scroll-snap-type: y mandatory;
-  scroll-padding-top: 0px; /* Adjust to offset for your fixed navbar height */
+  scroll-padding-top: 80px; /* Adjust to offset for your fixed navbar height */
 }
 
 section {
@@ -75,6 +75,7 @@ body {
 .navitem:hover {
   color: #fff;
   transform: scale(1.1);
+  cursor: crosshair;
 }
 
 .navitem::after {
@@ -92,6 +93,7 @@ body {
 .navitem:hover::after,
 .navitem:focus::after {
   opacity: 1;
+  cursor: crosshair;
 }
 
 /* Logo */
@@ -181,6 +183,7 @@ body {
 
 .spinBtn1:hover {
   transform: translateY(-50%) scale(1.2);
+  cursor: crosshair;
 }
 
 .barrelImg1 {
@@ -232,6 +235,7 @@ body {
 
 .spinBtn2:hover {
   transform: translateY(-50%) scale(1.2);
+  cursor: crosshair;
 }
 
 .barrelImg2 {
@@ -282,6 +286,7 @@ body {
 
 .spinBtn3:hover {
   transform: translateY(-50%) scale(1.2);
+  cursor: crosshair;
 }
 
 .barrelImg3 {
@@ -357,6 +362,7 @@ body {
 .footer-link:focus {
   color: #76a9ff;
   text-decoration: underline;
+  cursor: crosshair;
 }
 
 /* ----------- NAV SETAS ----------- */
@@ -473,6 +479,7 @@ body {
 
 .modal-content button[type="submit"]:hover {
   background: #45a049;
+  cursor: crosshair;
 }
 
 
@@ -501,6 +508,7 @@ body {
 .project:hover {
   transform: scale(1.02);
   box-shadow: 0 0 30px rgba(118, 169, 255, 0.4);
+  cursor: crosshair;
 }
 
 .project p {
@@ -522,6 +530,7 @@ body {
 .project a:hover {
   color: #ffffff;
   text-decoration: underline;
+  cursor: crosshair;
 }
 
 /* Alinhamento da .projects-container para cada seção */
@@ -597,4 +606,10 @@ body {
   .pessoal .institle2 {
     right: 5%;
   }
+}
+
+hr {
+  color: #141414;
+  box-shadow: #76a9ff 0 0 10px;
+  
 }
