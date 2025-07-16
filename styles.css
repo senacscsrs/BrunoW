@@ -1,3 +1,16 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 0px; /* Adjust to offset for your fixed navbar height */
+}
+
+section {
+  scroll-snap-align: start;
+}
+
 body {
   margin: 0;
   padding: 0;
