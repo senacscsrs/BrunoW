@@ -2,60 +2,162 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bruno Wojahn - Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
-  <!-- Modo claro favicon -->
-  <link rel="icon" href="imgs/logoblack.png" media="(prefers-color-scheme: light)">
-  <!-- Modo escuro favicon -->
-  <link rel="icon" href="imgs/logowhite.png" media="(prefers-color-scheme: dark)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio | Bruno Wojahn</title>
+  <link rel="icon" href="imgs/favicon.png" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="js/script.js" defer></script>
 </head>
 <body>
- <div id="preloader">
-  <button class="logo-btn" aria-label="Loading…">
-    <svg class="progress-circle" width="160" height="160">
-      <circle class="track"   cx="80" cy="80" r="74"/>
-      <circle class="progress" cx="80" cy="80" r="74"/>
-    </svg>
-    <img src="imgs/logo.png" alt="Logo Bruno Wojahn"/>
-  </button>
+
+  <!-- NAVBAR ----------------------------------------------------- -->
+   <div class="wrappernav">
+  <nav class="navbar">
+  <a href="#top" class="logo">
+    <img src="imgs/logo.png" alt="Logo Bruno Wojahn" />
+  </a>
+
+  <div class="navlinks">
+    <a href="#sobre"        class="navitem">Sobre</a>
+    <a href="#institucional" class="navitem">Institucional</a>
+    <a href="#pessoal"       class="navitem">Pessoal</a>
+    <a href="#profissional"  class="navitem">Profissional</a>
+    <a href="#contato"       class="navitem">Contato</a>
+  </div>
+  
+    <div class="nav-arrow" aria-label="Toggle navigation">&#x25BC;</div>
+</nav>
 </div>
 
-  <nav class="navbar">
-    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-    <label for="menu-toggle" class="hamburger" aria-label="Abrir menu" tabindex="0">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
+  <!-- SOBRE ------------------------------------------------------ -->
+  <!-- SOBRE ------------------------------------------------------ -->
+<section id="sobre" class="sobre">
+  <div class="sobretext">
+    <h1 class="maintitle">Eu sou o Bruno!</h1>
+    <h2 class="mainsubtitle">
+      Mas o que eu faço? Eu utilizo HTML, CSS e JavaScript para criar sites funcionais,
+      responsivos e completos para você ou seu negócio digital.
+    </h2>
+  </div>
+  <img src="imgs/bruno.jpg" alt="Bruno Wojahn" class="personalphoto" />
+  <!-- NENHUM <button class="spinBtn"> aqui -->
+</section>
 
-    <a href="index.html" aria-label="Logo Bruno Wojahn">
-  <img src="imgs/logo.png" class="logo" alt="Logo Bruno Wojahn">
-</a>
 
-    <ul class="menu">
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="about.html">SOBRE</a></li>
-      <li><a href="contact.html">CONTATO</a></li>
-      <li class="dropdown">
-        <a href="#" tabindex="0">PROJETOS</a>
-      <ul class="submenu">
-          <li><a href="projectsp.html">PESSOAIS</a></li>
-          <li><a href="projectse.html">ESCOLARES</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-      <main class="indextitle">
-          <h1>PORTFOLIO</h1>
-            <a href="https://www.instagram.com/brwojahn/" target="_blank" class="indexsub">BRUNO WOJAHN</p>
-              
-      </main>
-      
-      <footer>
-          <p>© 2025 Bruno Wojahn</p>
-      </footer>
-      <script src="script.js" defer></script>
-  </body>
+  <hr><!-- temporário -->
+
+  <!-- INSTITUCIONAL --------------------------------------------- -->
+  <section id="institucional" class="institucional">
+    <h2 class="institle1">Projetos Institucionais</h2>
+
+    <button class="spinBtn1" aria-label="Girar barril">
+      <img class="barrelImg1" src="imgs/revwhite.png" alt="Barril de arma" />
+    </button>
+
+    <div class="projects-container">
+      <div class="project" id="institucional-helloworld">
+        <p>Hello World</p>
+        <p>Projeto inicial mostrando o básico em programação.</p>
+        <a href="projetos/institucional/helloworld/index.html" target="_blank" rel="noopener noreferrer">Abrir projeto completo</a>
+      </div>
+
+      <div class="project" id="institucional-imagens-etamanhos">
+        <p>Imagens e Tamanhos</p>
+        <p>Projeto focado em manipulação de imagens e responsividade.</p>
+        <a href="projetos/institucional/imagens-etamanhos/index.html" target="_blank" rel="noopener noreferrer">Abrir projeto completo</a>
+      </div>
+
+      <div class="project" id="institucional-boair">
+        <p>BoAir</p>
+        <p>Projeto desenvolvido durante o curso na instituição.</p>
+        <a href="projetos/institucional/boair/index.html" target="_blank" rel="noopener noreferrer">Abrir projeto completo</a>
+      </div>
+    </div>
+  </section>
+
+  <hr><!-- temporário -->
+
+  <!-- PESSOAL ---------------------------------------------------- -->
+  <section id="pessoal" class="pessoal">
+    <h2 class="institle2">Projetos Pessoais</h2>
+
+    <button class="spinBtn2" aria-label="Girar barril">
+      <img class="barrelImg2" src="imgs/revwhite.png" alt="Barril de arma" />
+    </button>
+
+    <div class="projects-container">
+      <div class="project" id="pessoal-redvsblue">
+        <p>Red vs. Blue</p>
+        <p>Projeto inicial mostrando o básico em lógica e JavaScript.</p>
+        <a href="projetos/institucional/helloworld/index.html" target="_blank" rel="noopener noreferrer">Abrir projeto completo</a>
+      </div>
+
+      <div class="project" id="pessoal-placeholder1">
+        <p>Nada ainda!</p>
+        <p>Estamos trabalhando nisso!</p>
+        <a href="projetos/institucional/imagens-etamanhos/index.html" target="_blank" rel="noopener noreferrer">Abrir projeto completo</a>
+      </div>
+
+      <div class="project" id="pessoal-placeholder2">
+        <p>Nada ainda!</p>
+        <p>Estamos trabalhando nisso!</p>
+        <a href="projetos/institucional/imagens-etamanhos/index.html" target="_blank" rel="noopener noreferrer">Abrir projeto completo</a>
+      </div>
+    </div>
+  </section>
+
+  <hr><!-- temporário -->
+
+  <!-- PROFISSIONAL ---------------------------------------------- -->
+  <section id="profissional" class="profissional">
+    <h2 class="institle1">Projetos Profissionais</h2>
+
+    <button class="spinBtn1" aria-label="Girar barril">
+      <img class="barrelImg1" src="imgs/revwhite.png" alt="Barril de arma" />
+    </button>
+
+    <div class="projects-container">
+      <div class="project" id="profissional-lifecare">
+        <p>LifeCare Candelária</p>
+        <p>Website que fiz para a clínica de estética avançada LifeCare Candelária.</p>
+        <a href="projetos/institucional/helloworld/index.html" target="_blank" rel="noopener noreferrer">Abrir projeto completo</a>
+      </div>
+
+      <div class="project" id="profissional-placeholder1">
+        <p>Nada ainda!</p>
+        <p>Estamos trabalhando nisso!</p>
+        <a href="projetos/institucional/imagens-etamanhos/index.html" target="_blank" rel="noopener noreferrer">Abrir projeto completo</a>
+      </div>
+
+      <div class="project" id="profissional-placeholder2">
+        <p>Nada ainda!</p>
+        <p>Estamos trabalhando nisso!</p>
+        <a href="projetos/institucional/imagens-etamanhos/index.html" target="_blank" rel="noopener noreferrer">Abrir projeto completo</a>
+      </div>
+    </div>
+  </section>
+
+  <hr><!-- temporário -->
+
+  <!-- CONTATO ---------------------------------------------------- -->
+  <section id="contato" class="contato">
+    <h2 class="contacttitle">Contato</h2>
+    <button class="formopen" data-service="form">Gostou do que viu? Entre em contato comigo!</button>
+  </section>
+
+  <!-- footer -->
+
+  <footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Bruno Wojahn. Todos os direitos reservados.</p>
+    <p>
+      <a href="mailto:06071726069@senacrs.edu.br" class="footer-link">E-Mail</a> |
+      <a href="https://github.com/brwojahn" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a> |
+      <a href="#top" class="footer-link">Voltar ao topo ↑</a>
+    </p>
+  </div>
+</footer>
+
+    <script src="script.js" defer></script>
+</body>
 </html>

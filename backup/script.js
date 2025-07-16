@@ -1,4 +1,6 @@
-const services = {
+document.addEventListener('DOMContentLoaded', () => {
+  /* --- Modal --- */
+  const services = {
     form: { title: 'Formulário de Contato' }
   };
 
@@ -24,7 +26,7 @@ const services = {
   const modalDesc  = document.getElementById('modalDesc');
   const modalClose = document.getElementById('modalClose');
 
-  document.querySelectorAll('.formopen').forEach(btn => {
+  document.querySelectorAll('.open-modal').forEach(btn => {
     btn.addEventListener('click', () => {
       const svc = services[btn.dataset.service];
       if (!svc) return;
@@ -42,3 +44,35 @@ const services = {
   modalClose.addEventListener('click', closeModal);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.style.display === 'flex') closeModal(); });
+
+  /* ---------- PRELOADER ---------- */
+  const pre = document.getElementById('preloader');
+  if (pre) {
+    const ring = pre.querySelector('.progress');   // anel que anima
+
+    const waitAfterComplete = 1000; // 1 segundo parado após animação
+
+    const fade = () => {
+      pre.classList.add('fade-out'); // inicia fade-out (CSS)
+      // Remove do DOM após a transição de opacidade terminar (1s)
+      pre.addEventListener('transitionend', () => pre.remove(), { once: true });
+    };
+
+    if (ring) {
+      ring.addEventListener('animationend', e => {
+        if (e.animationName === 'fillRing') {
+          // Quando o círculo completar, esperar 1s e fazer fade
+          setTimeout(fade, waitAfterComplete);
+        }
+      });
+    } else {
+      // fallback: se não achar anel, some em 3s
+      setTimeout(fade, 3000);
+    }
+
+    // Failsafe: força remoção após 5s pra evitar travar
+    setTimeout(() => {
+      if (document.body.contains(pre)) fade();
+    }, 5000);
+  }
+});

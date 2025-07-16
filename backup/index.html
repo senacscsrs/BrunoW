@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bruno Wojahn - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
+  <!-- Modo claro favicon -->
+  <link rel="icon" href="imgs/logoblack.png" media="(prefers-color-scheme: light)">
+  <!-- Modo escuro favicon -->
+  <link rel="icon" href="imgs/logowhite.png" media="(prefers-color-scheme: dark)">
+</head>
+<body>
+ <div id="preloader">
+  <button class="logo-btn" aria-label="Loading…">
+    <svg class="progress-circle" width="160" height="160">
+      <circle class="track"   cx="80" cy="80" r="74"/>
+      <circle class="progress" cx="80" cy="80" r="74"/>
+    </svg>
+    <img src="imgs/logo.png" alt="Logo Bruno Wojahn"/>
+  </button>
+</div>
+
+  <nav class="navbar">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="hamburger" aria-label="Abrir menu" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <a href="index.html" aria-label="Logo Bruno Wojahn">
+  <img src="imgs/logo.png" class="logo" alt="Logo Bruno Wojahn">
+</a>
+
+    <ul class="menu">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">SOBRE</a></li>
+      <li><a href="contact.html">CONTATO</a></li>
+      <li class="dropdown">
+        <a href="#" tabindex="0">PROJETOS</a>
+      <ul class="submenu">
+          <li><a href="projectsp.html">PESSOAIS</a></li>
+          <li><a href="projectse.html">ESCOLARES</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+      <main class="indextitle">
+          <h1>PORTFOLIO</h1>
+            <a href="https://www.instagram.com/brwojahn/" target="_blank" class="indexsub">BRUNO WOJAHN</p>
+              
+      </main>
+      
+      <footer>
+          <p>© 2025 Bruno Wojahn</p>
+      </footer>
+      <script src="script.js" defer></script>
+  </body>
+</html>
