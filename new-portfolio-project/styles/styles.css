@@ -22,6 +22,7 @@ body {
     height: 75px;  /* bigger hover area */
     cursor: default;
     z-index: 1300;
+    cursor: crosshair;
 }
 
 /* Navbar absolutely positioned inside wrappernav */
@@ -45,17 +46,20 @@ body {
     /* Start retracted: translateY(-45px) */
     transform: translateX(-50%) translateY(-45px);
     transition: transform 1s ease-in-out;
+    cursor: crosshair;
 }
 
 /* On hover over wrappernav, slide navbar down */
 .wrappernav:hover .navbar {
     transform: translateX(-50%) translateY(30px);
+    cursor: crosshair;
 }
 
 /* grupo de links */
 .navlinks {
     display: flex;
     gap: 30px; /* espaço entre links */
+    cursor: crosshair;
 }
 
 .navitem {
@@ -64,12 +68,14 @@ body {
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s, transform 0.3s ease;
+    cursor: crosshair;
 }
 
 .navitem:hover {
     color: #fff;
     cursor: crosshair;
     transform: scale(1.1);
+    cursor: crosshair;
 }
 
 /* underline animation for navitem */
@@ -94,11 +100,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: crosshair;
 }
 
 .logo img {
     height: 100px; /* adjust as needed */
     object-fit: contain;
+    cursor: crosshair;
 }
 
 /* Seção de sobre */
@@ -182,6 +190,7 @@ body {
 
 .spinBtn1:hover {
   transform: translateY(-50%) scale(1.2);
+  cursor: crosshair;
 }
 
 .spinBtn1:focus {
@@ -199,6 +208,7 @@ body {
 
 .barrelImg1:hover {
   transform: scale(1.2);
+  cursor: crosshair;
 }
 
 
@@ -255,6 +265,7 @@ body {
 /* On hover, slide the navbar down */
 .navbar:hover {
   transform: translateX(-50%) translateY(30px);
+  cursor: crosshair;
 }
 
 /* seção continua com position: relative; */
@@ -283,6 +294,7 @@ body {
 
 .spinBtn2:hover {
   transform: translateY(-50%) scale(1.2);
+  cursor: crosshair;
 }
 
 .spinBtn2:focus {
@@ -301,6 +313,7 @@ body {
 
 .barrelImg2:hover {
   transform: scale(1.2);
+  cursor: crosshair;
 }
 
 .institle2 {
@@ -440,6 +453,7 @@ body {
   cursor: pointer;
   font-size: 1.2rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: crosshair;
 }
 
 /* footer */
@@ -471,7 +485,7 @@ body {
   color: #76a9ff;
   text-decoration: underline;
   outline: none;
-  cursor: pointer;
+  cursor: crosshair;
 }
 
 
@@ -511,6 +525,7 @@ body {
 /* Optional: change color on hover */
 .nav-arrow:hover {
   color: #76a9ff;
+  cursor: crosshair;
 }
 
 /* The arrow toggle container */
