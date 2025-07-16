@@ -550,7 +550,85 @@ body {
   transform: translateX(-50%) rotate(180deg);
 }
 
+/* modal contact form */
 
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  display:none;                  /* JS troca pra flex quando abre   */
+  justify-content:center;
+  align-items:center;
+  padding:1.5rem;
+  background:rgba(0,0,0,0.8);    /* fundo escurecido                 */
+  z-index:2000;                  /* > z‑index da navbar (1000)       */
+}
+
+.modal-content{
+  position:relative;
+  background:#000000;
+  color:#f8f8f8;
+  border-radius:10px;
+  width:min(90%,480px);
+  max-height:calc(100vh - 3rem);
+  overflow-y:auto;
+  padding:2rem 2.5rem;
+  box-shadow:0px 0px 20px #76a9ff;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+/* Botão X */
+#modalClose{
+  position:absolute;
+  top:0.75rem;
+  right:1rem;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:2rem;
+  cursor:pointer;
+  line-height:1;
+}
+
+/* Campos do formulário dentro do modal */
+.modal-content label{
+  margin-top: 1rem;
+  display:block;
+  margin-bottom:0.5rem;
+  font-weight:bold;
+  color:#eee;
+}
+
+.modal-content input,
+.modal-content textarea{
+  width:100%;
+  margin-top: 0.5rem;
+  margin-bottom:1rem;
+  padding:0.75rem;
+  font-size:1rem;
+  border:1px solid #535353;
+  border-radius:5px;
+  background:#121212;
+  color:#f0f0f0;
+  box-shadow: #76a9ff 0 0 10px;
+  margin-left: -13px;
+}
+
+.modal-content button[type="submit"]{
+  background:#4CAF50;
+  border:none;
+  padding:0.8rem;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:1rem;
+  color:#fff;
+  font-weight:bold;
+  width:100%;
+  transition:background 0.2s;
+}
+
+.modal-content button[type="submit"]:hover{
+  background:#45a049;
+}
 
 
 
