@@ -11,51 +11,83 @@ body {
     overflow-x: hidden;
 }
 
-/* barra centralizada na página */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(-45px); /* start shifted up */
-  width: 90%;
-  max-width: 1200px;
-  height: 60px;
-  background: #000;
-  box-shadow: #a3c3ff 0 0 10px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1.5rem;
-  z-index: 1200;
-  cursor: default;
-  
-  /* Animate the transform property */
-  transition: transform 1s ease-in-out;
+/* Wrapper enlarges the hover hitbox above navbar */
+.wrappernav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    height: 75px;  /* bigger hover area */
+    cursor: default;
+    z-index: 1300;
 }
 
-/* On hover, slide the navbar down */
-.navbar:hover {
-  transform: translateX(-50%) translateY(30px);
+/* Navbar absolutely positioned inside wrappernav */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 1200px;
+    height: 60px;
+    background: #000;
+    box-shadow: #a3c3ff 0 0 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    cursor: default;
+    box-sizing: border-box;
+
+    /* Start retracted: translateY(-45px) */
+    transform: translateX(-50%) translateY(-45px);
+    transition: transform 1s ease-in-out;
+}
+
+/* On hover over wrappernav, slide navbar down */
+.wrappernav:hover .navbar {
+    transform: translateX(-50%) translateY(30px);
 }
 
 /* grupo de links */
-.navlinks{
-  display:flex;
-  gap:30px;                 /* espaço entre links */
+.navlinks {
+    display: flex;
+    gap: 30px; /* espaço entre links */
 }
 
-.navitem{
-  color:#ffffff;
-  text-decoration:none;
-  font-size:1.2rem;
-  transition:color .3s;
+.navitem {
+    position: relative; /* necessary for ::after */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.3s ease;
 }
 
-.navitem:hover{
-  color:#fff;
-  cursor: crosshair;      
-  transform: scale(10px);        /* cor do link ao passar o mouse */
+.navitem:hover {
+    color: #fff;
+    cursor: crosshair;
+    transform: scale(1.1);
+}
+
+/* underline animation for navitem */
+.navitem::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #a3c3ff;
+    bottom: -22px; /* base of navbar */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.navitem:hover::after,
+.navitem:focus::after {
+    opacity: 1;
 }
 
 .logo {
@@ -65,43 +97,8 @@ body {
 }
 
 .logo img {
-  height: 100px; /* or width: 120px; adjust as needed */
-  object-fit: contain;
-}
-
-.navitem{
-  position: relative;                  /* necessário para ::after */
-  color:#ffffff;
-  text-decoration:none;
-  font-size:1.2rem;
-  transition:color .3s;
-}
-
-.navitem:hover{
-  color:#fff;
-  cursor: crosshair;      
-  transform: scale(1.1);
-  transition: transform 0.3s ease, color 0.3s ease;       /* cor do link ao passar o mouse */
-}
-
-/* linha escondida por padrão */
-.navitem::after{
-  content:'';
-  position:absolute;
-  left:0;
-  right:0;
-  height:2px;
-  background:#a3c3ff;
-  bottom:-22px;      /* ajusta até encostar na base da navbar */
-  opacity:0;
-  transition:opacity .3s;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-/* mostra a linha só no link hover/focus */
-.navitem:hover::after,
-.navitem:focus::after{
-  opacity:1;
+    height: 100px; /* adjust as needed */
+    object-fit: contain;
 }
 
 /* Seção de sobre */
@@ -515,6 +512,29 @@ body {
 .nav-arrow:hover {
   color: #76a9ff;
 }
+
+/* The arrow toggle container */
+.nav-toggle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #a3c3ff; /* arrow color */
+  cursor: pointer;
+  position: absolute;
+  bottom: -25px;           /* position just below navbar */
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  z-index: 1300;
+  user-select: none;
+}
+
+/* Rotate arrow 180deg when nav is open */
+.nav-toggle.open {
+  transform: translateX(-50%) rotate(180deg);
+}
+
 
 
 
