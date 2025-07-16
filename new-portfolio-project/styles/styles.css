@@ -423,7 +423,8 @@ body {
   color: #a3c3ff;
   display: flex;
   flex-direction: column; 
-  height: 100vh;
+  height: fit-content;
+  padding: 30px;
 }
 
 .contacttitle {
@@ -443,6 +444,78 @@ body {
   font-size: 1.2rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+/* footer */
+
+.footer {
+  background-color: #000; /* match your page background */
+  color: #a3c3ff;
+  text-align: center;
+  padding: 20px 10%;
+  font-size: 1rem;
+  border-top: 1px solid #a3c3ff;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
+
+.footer-link {
+  color: #a3c3ff;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  color: #76a9ff;
+  text-decoration: underline;
+  outline: none;
+  cursor: pointer;
+}
+
+
+
+/* nav arrow */
+
+
+.nav-arrow {
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #a3c3ff;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1300;
+
+  /* increase hover area */
+  padding: 20px 30px;  /* add invisible space around the arrow */
+  background-color: transparent; /* keep background invisible */
+  
+  animation: bounceUpDown 2s infinite ease-in-out;
+}
+
+
+/* Bounce keyframes: moves arrow up 8px and returns smoothly */
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+/* Optional: change color on hover */
+.nav-arrow:hover {
+  color: #76a9ff;
+}
+
 
 
 
