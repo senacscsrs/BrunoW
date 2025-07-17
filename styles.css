@@ -36,9 +36,9 @@ body {
 
 .navbar {
   position: absolute;
-  top: 0;
+  top: -45px; /* Removed translateY and use top */
   left: 50%;
-  transform: translateX(-50%) translateY(-45px);
+  transform: translateX(-50%);
   width: 100%;
   max-width: 1200px;
   height: 60px;
@@ -49,51 +49,45 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5rem;
-  transition: transform 1s ease-in-out;
+  transition: top 1s ease-in-out, transform 1s ease-in-out;
   box-sizing: border-box;
   cursor: crosshair;
 }
 
 .wrappernav:hover .navbar {
-  transform: translateX(-50%) translateY(30px);
+  top: 30px; /* Replace translateY with top */
+}
+
+.navitem {
+  position: relative;
+  color: #fff;
+  text-decoration: none;   /* Remove default underline */
+  font-size: 1.2rem;
+  display: inline-block;   /* Ensure padding and width apply */
+  padding: 10px 5px 8px 5px; /* Bottom padding to make space for underline */
+  transition: color 0.3s, transform 0.3s;
+  transform-origin: center;
+  will-change: transform;
+  cursor: crosshair;
+  border-bottom: 2px solid transparent; /* Reserve space for underline */
+}
+
+.navitem:hover,
+.navitem:focus {
+  color: #fff;
+  transform: scale(1.1);
+  border-bottom-color: #a3c3ff; /* Show underline smoothly by changing border color */
+}
+
+/* Remove your ::after underline to avoid hover flicker */
+.navitem::after {
+  display: none;
 }
 
 /* Links da navbar */
 .navlinks {
   display: flex;
   gap: 30px;
-}
-
-.navitem {
-  position: relative;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.navitem:hover {
-  color: #fff;
-  transform: scale(1.1);
-  cursor: crosshair;
-}
-
-.navitem::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -22px;
-  height: 2px;
-  background: #a3c3ff;
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-.navitem:hover::after,
-.navitem:focus::after {
-  opacity: 1;
-  cursor: crosshair;
 }
 
 /* Logo */
