@@ -113,3 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+const flag = 'visitedPortfolio'; // ou qualquer nome único que você queira
+
+if (!sessionStorage.getItem(flag)) {  // primeira visita nesta guia
+      alert('Este portoflio atualmente está em desenvolvimento, pode ser que algumas coisa ainda não funcionem como esperado.');
+      sessionStorage.setItem(flag, '1');  // grava para não repetir
+    } ;

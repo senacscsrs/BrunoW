@@ -44,7 +44,7 @@ body {
   height: 60px;
   background: #000;
   box-shadow: #a3c3ff 0 0 10px;
-  border-radius: 50px;
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: space-between;
