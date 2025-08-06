@@ -108,3 +108,11 @@ ul {
     border-color: #000;
     font-style: normal; /* remove itálico no hover */
 }
+
+.buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  justify-items: normal;
+}
