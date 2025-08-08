@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,6 +108,27 @@
             border-color: #000;
             font-style: normal; /* remove itálico no hover */
         }
+
+        .reset {
+            background-color: gray;
+            color: white;
+            border-radius: 20px;
+             width: 100px;
+            height: 30px;
+        }
+
+        .reset:hover {
+            background-color: rgb(94, 94, 94);
+            transform: scale(1.1);
+            transition: ease-in-out 0.5s;
+        }
+
+        .resetdiv {
+            display: flex;
+            justify-content: center;
+            align-self: bottom;
+        }
+        
     </style>
 </head>
 <body>
@@ -116,6 +137,9 @@
         <button class="blue" onclick="blueClick(this)">blue</button>
         <button class="red" onclick="redClick(this)">red</button>
     </div>
+        <div class="resetdiv">
+    <button class="reset" onclick="resetAll()">reset</button>
+            </div>
     <div class="team">
         <p id="blueCount">Azul: 0</p>
         <p id="redCount">Vermelho: 0</p>
@@ -124,30 +148,35 @@
     <script>
         let blueCount = 0;
         let redCount = 0;
-        let hasChosen = false;
 
         function blueClick(button) {
-            if (button.textContent == 'blue');
             alert('Você escolheu a equipe azul!');
             blueCount++;
             document.getElementById("blueCount").innerText = "Azul: " + blueCount;
-            hasChosen = true;
-            disableButtons();
+            disableTeamButtons();
         }
 
         function redClick(button) {
-            if (button.textContent == 'red');
             alert('Você escolheu a equipe vermelha!');
             redCount++;
             document.getElementById("redCount").innerText = "Vermelho: " + redCount;
-            hasChosen = true;
-            disableButtons();
+            disableTeamButtons();
         }
 
-        function disableButtons() {
-            document.querySelectorAll("button").forEach(btn => btn.disabled = true);
+        function disableTeamButtons() {
+            document.querySelector('.blue').disabled = true;
+            document.querySelector('.red').disabled = true;
         }
-    </script>
+
+        function resetAll() {
+            blueCount = 0;
+            redCount = 0;
+            document.getElementById("blueCount").innerText = "Azul: 0";
+            document.getElementById("redCount").innerText = "Vermelho: 0";
+            document.querySelector('.blue').disabled = false;
+            document.querySelector('.red').disabled = false;
+        }
+        </script>
      <footer class="footervoltar">
     <a href="../../index.html#pessoal" class="voltar">Voltar ao Projetos</a>
   </footer>  
