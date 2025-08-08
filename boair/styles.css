@@ -648,3 +648,14 @@ footer {
     padding-bottom: 1%;
 }
 
+.maintitle {
+    font-size: 1rem;
+    color: #ffffff; /* Azul profundo */
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
