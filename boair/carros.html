@@ -1,35 +1,342 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Carros | Boair</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOAIR - Busque Carros</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <!-- Menu -->
-  </header>
-  <main>
-    <section id="buscar-carros">
-      <h2>Aluguel de Carros</h2>
-      <form>
-        <label for="local-retirada">Local de retirada:</label>
-        <input type="text" id="local-retirada" name="local-retirada">
-        <label for="data-retirada">Data de retirada:</label>
-        <input type="date" id="data-retirada" name="data-retirada">
-        <label for="data-devolucao">Data de devolução:</label>
-        <input type="date" id="data-devolucao" name="data-devolucao">
-        <button type="submit">Buscar</button>
-      </form>
-      <!-- Exemplos de carros -->
-      <ul>
-        <li>Carro Econômico - R$ 50/dia</li>
-        <li>Carro SUV - R$ 120/dia</li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <!-- Rodapé -->
-  </footer>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BOAIR</a>
+            
+            <nav class="nav-menu">
+                <a href="promocoes.html" class="nav-link">PROMOÇÕES</a>
+                <a href="#" class="nav-link">CHATICES</a>
+                <a href="perfil.html" class="nav-link">CONTA</a>
+                <a href="sobre.html" class="nav-link">SOMOS BOAIR</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <h1>Busque Carros</h1>
+        </div>
+
+        <!-- Car Search Form -->
+        <div class="car-search-section">
+            <div class="search-form-container">
+                <form class="car-search-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>LOCAL DE RETIRADA</label>
+                            <input type="text" placeholder="Insira uma cidade" class="city-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>RETIRADA</label>
+                            <input type="date" class="date-input" required>
+                        </div>
+                        <div class="input-group">
+                            <label>DEVOLUÇÃO</label>
+                            <input type="date" class="date-input" required>
+                        </div>
+                        <div class="input-group">
+                            <label>TIPO</label>
+                            <select class="select-input">
+                                <option>SUV</option>
+                                <option>Sedan</option>
+                                <option>Hatch</option>
+                                <option>Pickup</option>
+                                <option>Conversível</option>
+                                <option>Van</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="search-btn">BUSCAR</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Car Categories -->
+        <div class="car-categories">
+            <h2>Categorias de Veículos</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🚗</div>
+                    <h3>Econômico</h3>
+                    <p>Ideal para economia</p>
+                    <span class="price">A partir de R$ 45/dia</span>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🚙</div>
+                    <h3>SUV</h3>
+                    <p>Conforto e espaço</p>
+                    <span class="price">A partir de R$ 85/dia</span>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🏎️</div>
+                    <h3>Sedan</h3>
+                    <p>Elegância e conforto</p>
+                    <span class="price">A partir de R$ 65/dia</span>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🚐</div>
+                    <h3>Van</h3>
+                    <p>Para grupos grandes</p>
+                    <span class="price">A partir de R$ 120/dia</span>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🛻</div>
+                    <h3>Pickup</h3>
+                    <p>Para trabalho e aventura</p>
+                    <span class="price">A partir de R$ 95/dia</span>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🏁</div>
+                    <h3>Conversível</h3>
+                    <p>Experiência única</p>
+                    <span class="price">A partir de R$ 150/dia</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Cars -->
+        <div class="featured-cars">
+            <h2>Carros em Destaque</h2>
+            <div class="cars-grid">
+                <div class="car-card">
+                    <div class="car-image">🚗</div>
+                    <div class="car-info">
+                        <h3>Chevrolet Onix</h3>
+                        <p class="car-category">Econômico</p>
+                        <div class="car-features">
+                            <span>• 5 passageiros</span>
+                            <span>• Ar condicionado</span>
+                            <span>• Direção hidráulica</span>
+                        </div>
+                        <div class="car-price">
+                            <span class="price">R$ 45/dia</span>
+                            <button class="select-btn">SELECIONAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">🚙</div>
+                    <div class="car-info">
+                        <h3>Toyota Corolla Cross</h3>
+                        <p class="car-category">SUV</p>
+                        <div class="car-features">
+                            <span>• 5 passageiros</span>
+                            <span>• Ar condicionado</span>
+                            <span>• Automático</span>
+                        </div>
+                        <div class="car-price">
+                            <span class="price">R$ 85/dia</span>
+                            <button class="select-btn">SELECIONAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">🏎️</div>
+                    <div class="car-info">
+                        <h3>Honda Civic</h3>
+                        <p class="car-category">Sedan</p>
+                        <div class="car-features">
+                            <span>• 5 passageiros</span>
+                            <span>• Ar condicionado</span>
+                            <span>• Automático</span>
+                        </div>
+                        <div class="car-price">
+                            <span class="price">R$ 65/dia</span>
+                            <button class="select-btn">SELECIONAR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">🚐</div>
+                    <div class="car-info">
+                        <h3>Renault Master</h3>
+                        <p class="car-category">Van</p>
+                        <div class="car-features">
+                            <span>• 15 passageiros</span>
+                            <span>• Ar condicionado</span>
+                            <span>• Grande porta-malas</span>
+                        </div>
+                        <div class="car-price">
+                            <span class="price">R$ 120/dia</span>
+                            <button class="select-btn">SELECIONAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Info -->
+        <div class="services-info">
+            <h2>Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">🔧</div>
+                    <h3>Manutenção Garantida</h3>
+                    <p>Todos os veículos passam por revisão completa</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Seguro Incluso</h3>
+                    <p>Proteção completa durante toda a locação</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">📍</div>
+                    <h3>Entrega e Retirada</h3>
+                    <p>Flexibilidade para retirar onde for melhor para você</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">⭐</div>
+                    <h3>Atendimento 24h</h3>
+                    <p>Suporte completo durante toda a viagem</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="termos.html">POLÍTICA DE PRIVACIDADE</a>
+                <a href="termos.html">TERMOS DE USO</a>
+                <a href="perfil.html">SEU PERFIL</a>
+                <a href="passagens.html">MINHAS PASSAGENS</a>
+                <a href="faq.html">FAQ</a>
+                <a href="sobre.html">SOBRE NÓS</a>
+                <a href="contato.html">CONTATO</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('login')">&times;</span>
+            <div class="modal-header">
+                <h2>BOAIR</h2>
+                <h3>Seja bem vindo à página de login BOAIR</h3>
+                <p>Para fazer seu login, utilize as informações abaixo</p>
+            </div>
+            
+            <form class="modal-form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Digite aqui" required>
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" placeholder="Digite aqui" required>
+                </div>
+                <button type="submit" class="modal-btn">Avançar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('register')">&times;</span>
+            <div class="modal-header">
+                <h2>BOAIR</h2>
+                <h3>Cadastro</h3>
+            </div>
+            
+            <form class="modal-form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Digite aqui" required>
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" placeholder="Digite aqui" required>
+                </div>
+                <div class="form-group">
+                    <label>Onde nos conheceu</label>
+                    <input type="text" placeholder="Digite aqui">
+                </div>
+                <div class="form-group">
+                    <label>Interesses</label>
+                    <input type="text" placeholder="Digite aqui">
+                </div>
+                <button type="submit" class="modal-btn">Avançar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        function openModal(type) {
+            const modal = document.getElementById(type + 'Modal');
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeModal(type) {
+            const modal = document.getElementById(type + 'Modal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const loginModal = document.getElementById('loginModal');
+            const registerModal = document.getElementById('registerModal');
+            
+            if (event.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+            if (event.target === registerModal) {
+                registerModal.style.display = 'none';
+            }
+        });
+
+        // Form submissions
+        document.querySelectorAll('.modal-form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Funcionalidade em desenvolvimento');
+            });
+        });
+
+        // Car search form
+        document.querySelector('.car-search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Busca de carros em desenvolvimento');
+        });
+
+        // Car selection buttons
+        document.querySelectorAll('.select-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Seleção de carro em desenvolvimento');
+            });
+        });
+    </script>
 </body>
 </html>
