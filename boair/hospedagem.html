@@ -2,34 +2,84 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Hospedagem | Boair</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boair | Aluguel de Carros</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <!-- Menu -->
+    <div class="container">
+      <a href="index.html">BOAIR</h1>
+      <nav>
+        <ul>
+          <li><a href="perfil.html">Seu Perfil</a></li>
+          <li><a href="carros.html">Carros</a></li>
+          <li><a href="passagens.html">Passagens</a></li>
+          <li><a href="hospedagem.html">Hospedagem</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
+
   <main>
-    <section id="buscar-hospedagem">
-      <h2>Reserve sua Hospedagem</h2>
+    <section class="carros-busca">
+      <h2>Alugue seu Hotel</h2>
       <form>
-        <label for="destino-hotel">Destino:</label>
-        <input type="text" id="destino-hotel" name="destino-hotel">
-        <label for="entrada">Entrada:</label>
-        <input type="date" id="entrada" name="entrada">
-        <label for="saida">Saída:</label>
-        <input type="date" id="saida" name="saida">
-        <button type="submit">Buscar</button>
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" placeholder="Insira uma cidade">
+
+        <label for="retirada">Data de Entrada</label>
+        <input type="date" id="retirada">
+
+        <label for="devolucao">Data de Saída</label>
+        <input type="date" id="devolucao">
+
+        <label for="tipo">Tipo de Hotel </label>
+        <select id="tipo">
+          <option value="economico">Econômico</option>
+          <option value="luxo">Luxo</option>
+        </select>
+
+        <button type="submit">BUSCAR</button>
       </form>
-      <!-- Lista de hotéis exemplo -->
-      <ul>
-        <li>Hotel Centro - R$ 200,00/noite</li>
-        <li>Pousada Sol - R$ 150,00/noite</li>
-      </ul>
+    </section>
+
+    <section class="carros-promo">
+      <h3>PROMOÇÕES</h3>
+      <div class="promo-card">
+        <h4>Econômico</h4>
+        <p>A partir de <strong>R$ 80/dia</strong></p>
+      </div>
+      <div class="promo-card">
+        <h4>SUV</h4>
+        <p>A partir de <strong>R$ 150/dia</strong></p>
+      </div>
     </section>
   </main>
-  <footer>
-    <!-- Rodapé -->
+<footer>
+    <div class="footer-section">
+      <h5>CHATICES</h5>
+      <ul>
+        <li><a href="#">POLÍTICA DE PRIVACIDADE</a></li>
+        <li><a href="#">TERMOS DE USO</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h5>CONTA</h5>
+      <ul>
+        <li><a href="#">SEU PERFIL</a></li>
+        <li><a href="#">MINHAS PASSAGENS</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h5>SOMOS BOAIR</h5>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">SOBRE NÓS</a></li>
+        <li><a href="#">CONTATO</a></li>
+      </ul>
+    </div>
   </footer>
 </body>
 </html>

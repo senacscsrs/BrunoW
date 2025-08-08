@@ -2,36 +2,87 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Passagens | Boair</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boair | Aluguel de Carros</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <!-- Menu -->
+    <div class="container">
+      <a href="index.html">BOAIR</h1>
+      <nav>
+        <ul>
+          <li><a href="perfil.html">Seu Perfil</a></li>
+          <li><a href="carros.html">Carros</a></li>
+          <li><a href="passagens.html">Passagens</a></li>
+          <li><a href="hospedagem.html">Hospedagem</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
+
   <main>
-    <section id="buscar-passagens">
-      <h2>Encontre as melhores passagens aéreas</h2>
+    <section class="busca">
+      <h2>Para onde vamos?</h2>
       <form>
-        <label for="origem">Origem:</label>
-        <input type="text" id="origem" name="origem">
-        <label for="destino">Destino:</label>
-        <input type="text" id="destino" name="destino">
-        <label for="data-ida">Ida:</label>
-        <input type="date" id="data-ida" name="data-ida">
-        <label for="data-volta">Volta:</label>
-        <input type="date" id="data-volta" name="data-volta">
+        <div class="form-group">
+          <label for="entrada">Entrada</label>
+          <input type="date" id="entrada" name="entrada">
+        </div>
+        <div class="form-group">
+          <label for="saida">Saída</label>
+          <input type="date" id="saida" name="saida">
+        </div>
+        <div class="form-group">
+          <label for="origem">Origem</label>
+          <input type="text" id="origem" placeholder="Insira uma cidade">
+        </div>
+        <div class="form-group">
+          <label for="destino">Destino</label>
+          <input type="text" id="destino" placeholder="Insira uma cidade">
+        </div>
         <button type="submit">Buscar</button>
       </form>
-      <!-- Lista de resultados (exemplo estático) -->
-      <ul>
-        <li>Voo SP → RJ - R$ 300,00</li>
-        <li>Voo SP → BH - R$ 250,00</li>
-      </ul>
+    </section>
+
+        <button type="submit">BUSCAR</button>
+      </form>
+    </section>
+
+    <section class="carros-promo">
+      <h3>PROMOÇÕES</h3>
+      <div class="promo-card">
+        <h4>Econômico</h4>
+      </div>
+      <div class="promo-card">
+        <h4>Executivo</h4>
+      </div>
     </section>
   </main>
-  <footer>
-    <!-- Rodapé -->
+<footer>
+    <div class="footer-section">
+      <h5>CHATICES</h5>
+      <ul>
+        <li><a href="#">POLÍTICA DE PRIVACIDADE</a></li>
+        <li><a href="#">TERMOS DE USO</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h5>CONTA</h5>
+      <ul>
+        <li><a href="#">SEU PERFIL</a></li>
+        <li><a href="#">MINHAS PASSAGENS</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h5>SOMOS BOAIR</h5>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">SOBRE NÓS</a></li>
+        <li><a href="#">CONTATO</a></li>
+      </ul>
+    </div>
   </footer>
 </body>
 </html>
