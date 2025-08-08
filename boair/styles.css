@@ -656,6 +656,17 @@ footer {
     font-weight: bold;
 }
 
+.boairr {
+    font-size: 3rem;
+    color: #0A0A33; /* Azul profundo */
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    padding-top: 2%;
+}
 
 
 
