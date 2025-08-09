@@ -1,7 +1,7 @@
 :root {
     --white: #ffffff;
-    --gold: #b17d2b;
-    --purple: #3C1053;
+    --gold: rgb(177, 125, 43);
+    --purple: rgb(60, 16, 83);
     --text: #333333;
 }
 
@@ -11,7 +11,7 @@
     padding: 0;
 }
 
-body {
+body, html {
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
     color: var(--text);
     background: var(--white);
@@ -30,8 +30,10 @@ a:hover {
 }
 
 .container {
+    background-image: image('imgs/title.jpeg');
     width: min(90%, 1200px);
     margin-inline: auto;
+    margin-top: 30px;
 }
 
 /* Header */
@@ -99,6 +101,43 @@ header {
     color: #ffffff;
 }
 
+.textt {
+    color: var(--white);
+    font-size: 1.9rem;
+    margin-top: 10px;
+    margin-bottom: 1rem;
+}
+
+.textt1 {
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 1%;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.yeah {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1rem;
+     background: 
+     linear-gradient(rgba(60, 16, 83, 0.7), rgb(20, 20, 20)), /* dark overlay */
+        url('imgs/title.jpeg');
+    color: var(--white);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.container1 {
+    width: min(90%, 1200px);
+    margin-inline: auto;
+    padding: 0 1rem;
+}
+
 /* Hero */
 .hero {
     display: flex;
@@ -116,8 +155,11 @@ header {
 }
 
 .hero p {
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-top: 1%;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 /* Cards (Serviços e Profissionais) */
