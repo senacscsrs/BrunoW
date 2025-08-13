@@ -32,6 +32,65 @@
                 width: 50px;
                 height: 50px;
             }
+
+                    .footervoltar {
+            position: fixed; /* fixa no rodapé */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000000; /* cor de fundo suave */
+            padding: 15px 0;
+            text-align: center; /* centraliza o conteúdo */
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            z-index: 1000; /* para ficar acima de outros elementos */
+        }
+
+        .voltar {
+            display: inline-block;
+            background-color: rgb(0, 197, 26);
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            padding: 10px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            border: 2px solid #222;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: 
+                background 0.2s,
+                color 0.2s,
+                box-shadow 0.2s,
+                transform 0.15s;
+}
+
+        .voltar:hover {
+            background-color: rgb(3, 100, 0);
+            color: white;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+            transform: translateY(-2px) scale(1.2);
+            border-color: #000;
+            font-style: normal; /* remove itálico no hover */
+        }
+
+        .reset {
+            background-color: gray;
+            color: white;
+            border-radius: 20px;
+             width: 100px;
+            height: 30px;
+        }
+
+        .reset:hover {
+            background-color: rgb(94, 94, 94);
+            transform: scale(1.1);
+            transition: ease-in-out 0.5s;
+        }
+
+        .resetdiv {
+            display: flex;
+            justify-content: center;
+            align-self: bottom;
+        }
     </style>
 </head>
 <body>
@@ -53,5 +112,8 @@
                 document.querySelector('h1').textContent = `A Cor gerada é: rgb(${r}, ${g}, ${b})`;
             }
         </script>
+        <footer class="footervoltar">
+    <a href="../../index.html#pessoal" class="voltar">Voltar ao Projetos</a>
+  </footer> 
 </body>
 </html>
