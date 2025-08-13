@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if & else</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        background-color: #b8b8b8;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      input {
+        padding: 10px;
+        font-size: 16px;
+        width: 200px;
+        margin-bottom: 10px;
+        width: 39%;
+      }
+
+      .limpar, .enter{
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-left: 10px;
+        position: relative;
+        border-radius: 999px;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        background: #9b9b9b;
+      }
+
+      .enter:hover,
+      .limpar:hover {
+        background-color: #f0f0f0;
+        transform: scale(1.1);
+        transition: 0.5s ease;
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      input[type="number"] {
+        width: 200px;
+        border-radius: 4px;
+        background-color: #cccccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>VERIFICAÇÃO DE NÚMERO</h1>
+    <input
+      type="number"
+      id="numberInput"
+      placeholder="Digite um número de 1 a 10"
+    />
+    <div class="buttons">
+      <button onclick="verifyValue()" class="enter">CONFIRMAR</button>
+      <button onclick="resetInput()" class="limpar">LIMPAR</button>
+    </div>
+    <p id="result"></p>
+
+    <script>
+      // aleatorio
+      let secretNumber = Math.floor(Math.random() * 10) + 1;
+
+      function verifyValue() {
+        const numberInput = document.getElementById("numberInput");
+        const resultText = document.getElementById("result");
+        const guess = Number(numberInput.value);
+
+        if (guess > 10 || guess < 1) {
+          alert("Por favor, insira um número entre 1 e 10.");
+          return;
+        }
+
+        //prints
+
+        if (guess === secretNumber) {
+          resultText.textContent = "Parabéns! Você acertou o número secreto!";
+        } else if (guess < secretNumber) {
+          resultText.textContent =
+            "Tente novamente! O número secreto é maior que sua resposta.";
+        } else {
+          resultText.textContent =
+            "Tente novamente! O número secreto é menor que sua resposta.";
+        }
+      }
+
+      //reset basico
+
+      function resetInput() {
+        document.getElementById("numberInput").value = "";
+        document.getElementById("result").textContent = "";
+        secretNumber = Math.floor(Math.random() * 10) + 1;
+      }
+    </script>
+  </body>
+</html>
