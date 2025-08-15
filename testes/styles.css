@@ -1,0 +1,333 @@
+#landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, var(--color-gold-start), var(--color-gold-end));
+  color: var(--color-navy);
+  border-radius: 12px;
+}
+
+.container1 {
+  max-width: 800px;
+}
+
+.maintitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.mainsubtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.btnprimary {
+  background: linear-gradient(135deg, var(--color-gold-start), var(--color-gold-end));
+  color: var(--color-navy);
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color var(--transition-speed);
+}
+
+.btnprimary:hover,
+.btnprimary:focus {
+  background: var(--color-navy);
+  color: var(--color-gold-start);
+  outline: none;
+}
+
+/* -------------------------------- */
+/* About Us Section Styling          */
+/* -------------------------------- */
+.aboutus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.part1 {
+  flex: 1 1 360px;
+}
+
+.abouttitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-navy);
+}
+
+.desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-navy);
+  margin-bottom: 1rem;
+}
+
+.jonas {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(34,63,126,0.1);
+}
+
+/* -------------------------------- */
+/* Our Products Section Styling      */
+/* -------------------------------- */
+.ourproducts {
+  flex: 1 1 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.ourproducts > div {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid var(--color-navy);
+  cursor: pointer;
+  padding: 1rem 1rem 4rem 1rem; /* bottom padding for revealed text */
+  transition: box-shadow var(--transition-speed);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+}
+
+.ourproducts > div:hover {
+  box-shadow: 0 0 10px var(--color-navy);
+}
+
+.ourproducts img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--transition-speed);
+  z-index: 2;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Title always visible at top-left */
+.producttitle {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: var(--color-gold-start);
+  font-weight: 700;
+  background: rgba(34, 63, 126, 0.85);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  z-index: 3;
+  max-width: 70%;
+  pointer-events: none;
+  font-size: 1.1rem;
+}
+
+/* Description hidden initially */
+.productdesc {
+  color: var(--color-navy);
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-speed), padding var(--transition-speed);
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-top: 0.25rem;
+}
+
+/* Hover effect – image slides up, description revealed */
+.ourproducts > div:hover img {
+  transform: translateY(-50%);
+}
+
+.ourproducts > div:hover .productdesc {
+  max-height: 100px; /* enough space for text */
+  padding: 1rem 0 0 0;
+}
+
+/* Subtitle above products */
+.subtitle {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--color-navy);
+}
+
+/* -------------------------------- */
+/* Contact Section Styling           */
+/* -------------------------------- */
+.contact {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: var(--color-navy);
+  color: white;
+  border-radius: 12px;
+}
+
+.contacttitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.btnprimary.contact {
+  background: var(--color-gold-start);
+  color: var(--color-navy);
+  padding: 0.75rem 2.5rem;
+  font-size: 1.15rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color var(--transition-speed);
+}
+
+.btnprimary.contact:hover,
+.btnprimary.contact:focus {
+  background: var(--color-gold-end);
+  outline: none;
+}
+
+.contactsub {
+  margin-top: 1rem;
+  display: inline-block;
+  color: var(--color-gold-start);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.contactsub:hover,
+.contactsub:focus {
+  text-decoration: underline;
+}
+
+/* -------------------------------- */
+/* Footer Styling                   */
+/* -------------------------------- */
+footer {
+  background: var(--color-navy);
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer .footer p {
+  margin: 0.4rem 0;
+}
+
+ul.socials {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+ul.socials li a img {
+  height: 24px;
+  width: 24px;
+  filter: invert(100%);
+  transition: filter 0.2s ease-in-out;
+}
+
+ul.socials li a:hover img,
+ul.socials li a:focus img {
+  filter: invert(65%) sepia(82%) saturate(749%) hue-rotate(320deg) brightness(92%) contrast(87%);
+}
+
+/* -------------------------------- */
+/* Responsive Styling               */
+/* -------------------------------- */
+@media (max-width: 992px) {
+  .aboutus {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .part1, .ourproducts {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+
+  .maintitle {
+    font-size: 2.4rem;
+  }
+
+  .mainsubtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .navbar li a img {
+    height: 32px;
+  }
+
+  .maintitle {
+    font-size: 1.8rem;
+  }
+
+  .mainsubtitle {
+    font-size: 0.9rem;
+  }
+
+  .btnprimary {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .contacttitle {
+    font-size: 2rem;
+  }
+
+  .producttitle {
+    font-size: 1rem;
+  }
+
+  .productdesc {
+    font-size: 0.9rem;
+  }
+
+  footer ul.socials {
+    flex-wrap: wrap;
+  }
+}
+
+/* Small fixes */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 1.5rem 0;
+}
+
+

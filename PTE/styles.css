@@ -1,0 +1,133 @@
+:root {
+  --color-navy: #223f7e;
+  --color-gold-start: #c8ae6a;
+  --color-gold-end: #e0c763;
+  --transition-speed: 0.3s;
+  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --max-width: 1200px;
+  --page-padding: 2rem 1rem;
+}
+
+/* -------------------------------- */
+/* Root & Scroll Snap Styling        */
+/* -------------------------------- */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  font-family: var(--font-primary);
+  color: var(--color-navy);
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  scroll-padding-top: 60px; /* for fixed navbar height */
+}
+
+body, main > section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  max-width: var(--max-width);
+}
+
+/* -------------------------------- */
+/* Navbar Styling                    */
+/* -------------------------------- */
+.navbar {
+  background: var(--color-navy);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0.5rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  width: 100vw;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.textnavbar {
+  color: var(--color-gold-start);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-left: auto;
+  container-type: flex;
+  display: flex;
+  flex-direction: row;
+  place-items: right;
+  margin-right: 20px;
+  gap: 10px;
+}
+.navbar li a:hover,
+.navbar li a:focus {
+  color: var(--color-gold-start);
+  outline: none;
+}
+
+.navbar li a img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* -------------------------------- */
+/* Landing Page Section Styling      */
+/* -------------------------------- */
+
+#landing {
+  background: url('../images/landing-bg.jpg') no-repeat center center/cover;
+  color: var(--color-navy);
+  text-align: center;
+  padding: 5rem 2rem;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnprimary {
+  background: rgb(212, 212, 212);
+  color: var(--color-navy);
+  padding: 0.75rem 2.5rem;
+  font-size: 1.15rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btnprimary:hover,
+.btnprimary:focus {
+  background: var(--color-navy);
+  color: white;
+  outline: none;
+  transition: 0.4s ease-in-out;
+}
+
+
+
+.leafimg {
+    visibility: hidden;
+}
+
+.stemsimg {
+    visibility: hidden;
+}
