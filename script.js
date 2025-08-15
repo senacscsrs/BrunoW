@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'institucional-helloworld',
         'institucional-imagens-etamanhos',
         'institucional-boair',
+        'institucional-gasolinajs',
       ],
     },
     spinBtn2: {

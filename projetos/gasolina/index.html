@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <language="pt-br">
+    <meta charset="UTF-8" />
+    <title>Calculador de Gasolina</title>
+    </title>
+    <style>
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #ffffff;
+        font-family: Arial, sans-serif;
+    }
+
+    input {
+        padding: 5px;
+        border-radius: 99999px;
+        border: 1.5px solid #000000;
+    }
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1:hover {
+            cursor: default;
+        }
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #b4b4b4;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            border: 20px;
+        }
+
+        .calcularbtn {
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 99999px;
+            border: 1.5px solid #000000;
+            padding: 22px;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .calcularbtn:hover {
+            background-color: #d0d0d0;
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: 0.3s ease;
+        }
+
+        .footervoltar {
+            position: fixed; /* fixa no rodapé */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #c6c5c5; /* cor de fundo suave */
+            padding: 15px 0;
+            text-align: center; /* centraliza o conteúdo */
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            z-index: 1000; /* para ficar acima de outros elementos */
+        }
+
+        .voltar {
+            display: inline-block;
+            background-color: rgb(232, 232, 232);
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            padding: 10px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            border: 2px solid #222;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: 
+                background 0.2s,
+                color 0.2s,
+                box-shadow 0.2s,
+                transform 0.15s;
+}
+
+        .voltar:hover {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+            transform: translateY(-2px) scale(1.2);
+            border-color: #000;
+            font-style: normal; /* remove itálico no hover */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Calculador de Gasolina</h1>
+    <form class="formulario">
+        <div class="inputs">
+            <input type="text" id="pessoaNome" placeholder="Digite o seu nome."></input>
+            <input type="number" id="distânciaKm" placeholder="Qual a distância (em Km/H)"></input>
+            <input type="number" id="consumoVeículo" placeholder="Qual o consumo do veículo (km por litro)"></input>
+            <input type="number" id="preçoGasolina" placeholder="Qual o preço da gasolina em R$"></input>
+            <button class="calcularbtn"type="button" onclick="calcular()">Calcular</button>
+        </div>
+    </form>
+
+     <footer class="footervoltar">
+    <a href="../../index.html#institucional" class="voltar">Voltar ao Projetos</a>
+  </footer>  
+
+            <script>
+                function calcular() {
+                    const pessoaNome = document.getElementById("pessoaNome").value;
+                    const distânciaKm = parseFloat(document.getElementById("distânciaKm").value);
+                    const consumoVeículo = parseFloat(document.getElementById("consumoVeículo").value);
+                    const preçoGasolina = parseFloat(document.getElementById("preçoGasolina").value);
+
+                    if (isNaN(distânciaKm) || isNaN(consumoVeículo) || isNaN(preçoGasolina) || consumoVeículo <= 0) {
+                        alert("Por favor, insira valores válidos.");
+                        return;
+                    }
+
+                    const litrosNecessários = distânciaKm / consumoVeículo;
+                    const custoTotal = litrosNecessários * preçoGasolina;
+
+                    alert(`Olá ${pessoaNome}, para percorrer ${distânciaKm} km, você precisará de aproximadamente ${litrosNecessários.toFixed(2)} litros de gasolina, o que custará cerca de R$ ${custoTotal.toFixed(2)}.`);
+                }
+            </script>
+</body>
+</html>
