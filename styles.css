@@ -70,6 +70,8 @@ body {
   will-change: transform;
   cursor: crosshair;
   border-bottom: 2px solid transparent; /* Reserve space for underline */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
 }
 
 .navitem:hover,
