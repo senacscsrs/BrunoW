@@ -16,7 +16,7 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #000;
-  color: #a3c3ff;
+  color: #7a7a7a 0 0 10px;
   cursor: crosshair;
   overflow-x: hidden;
 }
@@ -43,7 +43,7 @@ body {
   max-width: 1200px;
   height: 60px;
   background: #000;
-  box-shadow: #a3c3ff 0 0 10px;
+  box-shadow: #7a7a7a 0 0 10px;
   border-radius: 9999px;
   display: flex;
   align-items: center;
@@ -78,7 +78,7 @@ body {
 .navitem:focus {
   color: #fff;
   transform: scale(1.1);
-  border-bottom-color: #a3c3ff; /* Show underline smoothly by changing border color */
+  border-bottom-color: #7a7a7a; /* Show underline smoothly by changing border color */
 }
 
 /* Remove your ::after underline to avoid hover flicker */
@@ -137,7 +137,7 @@ body {
   height: 350px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 10px rgba(163, 195, 255, 0.7);
+  box-shadow: 0 0 10px #7a7a7a;
   flex-shrink: 0;
 }
 
@@ -309,7 +309,7 @@ body {
   position: relative;
   padding: 50px 10%;
   background: #000;
-  color: #a3c3ff;
+  color: #7a7a7a;
   display: flex;
   flex-direction: column;
   height: fit-content;
@@ -322,7 +322,7 @@ body {
 }
 
 .formopen {
-  background-color: #a3c3ff;
+  background-color: #7a7a7a;
   color: #000;
   padding: 10px 20px;
   border: none;
@@ -335,11 +335,11 @@ body {
 /* ----------- FOOTER ----------- */
 .footer {
   background: #000;
-  color: #a3c3ff;
+  color: #7a7a7a;
   text-align: center;
   padding: 20px 10%;
   font-size: 1rem;
-  border-top: 1px solid #a3c3ff;
+  border-top: 1px solid #7a7a7a;
   user-select: none;
 }
 
@@ -348,7 +348,7 @@ body {
 }
 
 .footer-link {
-  color: #a3c3ff;
+  color: #7a7a7a;
   text-decoration: none;
   margin: 0 8px;
   transition: color 0.3s ease;
@@ -356,7 +356,7 @@ body {
 
 .footer-link:hover,
 .footer-link:focus {
-  color: #76a9ff;
+  color: #7a7a7a;
   text-decoration: underline;
   cursor: crosshair;
 }
@@ -368,7 +368,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   font-size: 2rem;
-  color: #a3c3ff;
+  color: #7a7a7a;
   user-select: none;
   z-index: 1300;
   padding: 20px 30px;
@@ -382,7 +382,7 @@ body {
 }
 
 .nav-arrow:hover {
-  color: #76a9ff;
+  color: #7a7a7a;
 }
 
 /* Toggle Arrow */
@@ -391,7 +391,7 @@ body {
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #a3c3ff;
+  border-top: 10px solid #7a7a7a;
   position: absolute;
   bottom: -25px;
   left: 50%;
@@ -424,7 +424,7 @@ body {
   max-height: calc(100vh - 3rem);
   overflow-y: auto;
   padding: 2rem 2.5rem;
-  box-shadow: 0px 0px 20px #76a9ff;
+  box-shadow: 0px 0px 20px #7a7a7a;
 }
 
 #modalClose {
@@ -457,7 +457,7 @@ body {
   border-radius: 5px;
   background: #121212;
   color: #f0f0f0;
-  box-shadow: #76a9ff 0 0 10px;
+  box-shadow: #7a7a7a 0 0 10px;
 }
 
 .modal-content button[type="submit"] {
@@ -494,16 +494,16 @@ body {
 .project {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
-  border-left: 4px solid #76a9ff;
+  border-left: 4px solid #7a7a7a;
   padding: 20px 25px;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(118, 169, 255, 0.2);
+  box-shadow: 0 0 20px #7a7a7a;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 30px rgba(118, 169, 255, 0.4);
+  box-shadow: 0 0 30px #7a7a7a;
   cursor: crosshair;
 }
 
@@ -515,7 +515,7 @@ body {
 }
 
 .project a {
-  color: #a3c3ff;
+  color: #1aff068a;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
@@ -524,7 +524,7 @@ body {
 }
 
 .project a:hover {
-  color: #ffffff;
+  color: #1aff06;
   text-decoration: underline;
   cursor: crosshair;
 }
