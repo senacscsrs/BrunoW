@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="tela">
+        <div class="red" id="reddiv">
+            <button class="redbutton" onclick="buttonClicked(1)" id="red"></button>
+        </div>
+
+        <div class="blue" id="bluediv">
+            <button class="bluebutton" onclick="buttonClicked(2)" id="blue"></button>
+        </div>
+
+        <div class="green" id="greendiv">
+            <button class="greenbutton" onclick="buttonClicked(3)" id="green"></button>
+        </div>
+
+        <div class="yellow" id="yellowdiv">
+            <button class="yellowbutton" onclick="buttonClicked(4)" id="yellow"></button>
+        </div>
+
+         <div class="start">
+            <button id="startbtn" class="startbutton" onclick="startGame()">Começar</button>
+        </div>
+
+        <p id="hs" class="hs">Recorde:</p>
+    </div>   
+</body>
+</html>

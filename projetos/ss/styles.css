@@ -1,0 +1,79 @@
+/* Reset and base */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Game grid */
+.tela {
+    width: 80vmin;   /* keeps it square on any screen */
+    height: 80vmin;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* Color buttons */
+.redbutton {
+    background-color: red;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.bluebutton {
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.greenbutton {
+    background-color: green;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.yellowbutton {
+    background-color: yellow;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* Start button */
+.startbutton {
+    background-color: white;  
+    color: black;
+    border: none;
+    border-radius: 999px;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.startbutton:hover {
+    background-color: #ddd;
+}
