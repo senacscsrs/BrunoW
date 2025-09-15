@@ -62,8 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
       barrelClass: 'barrelImg2',
       projects: [
         'pessoal-redvsblue',
-        'pessoal-placeholder1',
-        'pessoal-placeholder2',
+        'pessoal-cores',
+        'pessoal-chute',
+        'pessoal-simon',
       ],
     },
     spinBtn3: {
