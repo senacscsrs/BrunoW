@@ -12,14 +12,10 @@ Sou estudante do **Senac Ensino Médio e Técnico**, apaixonado por tecnologia, 
 - `about.html`, `contact.html` – Páginas de navegação do site
 - `projects*.html` – Páginas específicas para exibição de projetos
 - `styles.css` – Arquivo principal de estilização
-- `functions/` – Scripts e funções JS
 - `imgs/` – Imagens utilizadas
 - `curriculo/`, `boair/`, `testes/` – Projetos separados por tema ou fase
 - `errorimage*` – Páginas de erro personalizadas
-- `09-06-25/`, `11-06-25/` – Pastas de atividades práticas por data
-- `primeirojs` - Estudo sobre JavaScript, (feito em casa)
-- `simon` - minijogo em js
-- ``
+- `projetos` - Pasta de projetos
 
 ##  Alguns Projetos em Destaque
 
