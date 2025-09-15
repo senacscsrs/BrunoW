@@ -18,6 +18,8 @@ Sou estudante do **Senac Ensino Médio e Técnico**, apaixonado por tecnologia, 
 - `errorimage*` – Páginas de erro personalizadas
 - `09-06-25/`, `11-06-25/` – Pastas de atividades práticas por data
 - `primeirojs` - Estudo sobre JavaScript, (feito em casa)
+- `simon` - minijogo em js
+- ``
 
 ##  Alguns Projetos em Destaque
 
