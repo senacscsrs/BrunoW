@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'institucional-imagens-etamanhos',
         'institucional-boair',
         'institucional-gasolinajs',
+        'institucional-trabalhodesafio',
       ],
     },
     spinBtn2: {
