@@ -16,6 +16,7 @@ Sou estudante do **Senac Ensino Médio e Técnico**, apaixonado por tecnologia, 
 - `curriculo/`, `boair/`, `testes/` – Projetos separados por tema ou fase
 - `errorimage*` – Páginas de erro personalizadas
 - `projetos` - Pasta de projetos
+- `trabalhodesafio` - Projeto simulando uma empresa procurando uma solução de um problema em js
 
 ##  Alguns Projetos em Destaque
 
