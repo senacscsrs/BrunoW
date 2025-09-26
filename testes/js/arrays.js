@@ -1,36 +1,36 @@
-// 1. Declare a variable called cores and assign it an array with three colors. 
-// Print the array using console.log().
+// 1. Declare uma variável chamada cores e atribua a ela um array com três cores. 
+// Imprima o array usando console.log().
 
 let cores = [vermelho, azul, roxo];
 console.log(cores);
 
-// 2. Print the second color in the array using its index.
+// 2. Imprima a segunda cor do array usando seu índice.
 
 console.log(cores[1]);
 
-// 3. Change the last color in the array to "amarelo" and print the updated array.
+// 3. Altere a última cor do array para "amarelo" e imprima o array atualizado.
 
 let cores[2] = "amarelo";
 console.log(cores);
 
-// 4. Add a new color "roxo" to the end of the array using push(). Print the array.
+// 4. Adicione uma nova cor "roxo" ao final do array usando push(). Imprima o array.
 
 cores.push("roxo");
 console.log(cores);
 
-// 5. Remove the first color from the array using shift() and print the remaining array.
+// 5. Remova a primeira cor do array usando shift() e imprima o array restante.
 
 shift.cores([0]);
 console.log(cores);
 
-// 6. Create a for loop to print all the colors in the array, one per line.
+// 6. Crie um loop for para imprimir todas as cores do array, uma por linha.
 
 for (let i = 0; i < cores.length; i++) {
     console.log(cores[i]);
 }
 
-// 7. Create a new array numeros with the values 10, 20, 30, 40, 50. Use a
-// for loop to calculate and print the sum of all numbers in the array.
+// 7. Crie um novo array numeros com os valores 10, 20, 30, 40, 50. 
+// Use um loop for para calcular e imprimir a soma de todos os números do array.
 
 let numeros = [10, 20, 30, 40, 50];
 for (let i = 0; i < numeros.length; i++) {
