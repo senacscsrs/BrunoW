@@ -10,7 +10,7 @@ console.log(cores[1]);
 
 // 3. Altere a última cor do array para "amarelo" e imprima o array atualizado.
 
-let cores[2] = "amarelo";
+cores[2] = "amarelo";
 console.log(cores);
 
 // 4. Adicione uma nova cor "roxo" ao final do array usando push(). Imprima o array.

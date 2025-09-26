@@ -1,6 +1,6 @@
 // 1. Declare a function called sayHello that prints "Hello!" to the console. Call the function.
 
-fucntion sayHello() {
+function sayHello() {
     console.log("Hello!");
 }
 
@@ -22,15 +22,10 @@ console.log(sum(3, 5));
 // 4. Write a function isEven that takes a number and returns true if it is even, false if odd. Test it with 4 and 7.
 
 function isEven(num) {
-        if (num % 2 === 0) {
-            console.log("neutral");
-        else if (num % 2 !== 0) {
-            console.log("even");
-            return true;
-        } else {
-            console.log("odd");
-            return false;
-        }
+    if (num % 2 === 0) {
+        return true;
+    } else {
+        return false;
     }
 }
 
