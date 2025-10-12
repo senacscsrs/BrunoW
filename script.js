@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'pessoal-cores',
         'pessoal-chute',
         'pessoal-simon',
+        'pessoal-multipla'
       ],
     },
     spinBtn3: {

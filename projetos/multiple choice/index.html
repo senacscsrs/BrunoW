@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiple Choice</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-   <button id="startGame">Começar Jogo</button>
+   <button id="startGame" class="start">Começar Jogo</button>
 
-<div id="quiz-container" style="display:none;">
-  <p id="question"></p>
-  <div id="options"></div>
-  <button id="nextQuestion" style="display:none;">Próxima</button>
+<div class="quiz-container" id="quiz-container" style="display:none;">
+  <p id="question"  class="question"></p>
+  <div id="options" class="options"></div>
+  <button id="nextQuestion" style="display:none;" class="nextQuestion">Próxima</button>
 </div>
 
 <p id="score" style="display:none;"></p>
 
-<script src="yourScript.js"></script>
+<footer class="footervoltar">
+    <a href="../../index.html#pessoal" class="voltar">Voltar ao Projetos</a>
+</footer> 
 
 </body>
 </html>

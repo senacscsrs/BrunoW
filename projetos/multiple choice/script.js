@@ -12,7 +12,7 @@ const allQuestions = [
   {
     question: "Quem é maior, Neymar ou Cafu?",
     options: ["Neymar", "Cafu"],
-    correctOption: 0 
+    correctOption: 1 
   },
   {
     question: "Quem escreveu 'Romeu e Julieta'?",
@@ -29,11 +29,6 @@ const allQuestions = [
     options: ["4", "82", "não sei", "97"],
     correctOption: 1
   },
-  {
-    question: "Qual a taxa de mortalidade entre pessoas que cometeram suicídio?",
-    options: ["0%", "20%", "70%", "100%"],
-    correctOption: 3
-  }
 ];
 
 let currentQuestionIndex = 0;
