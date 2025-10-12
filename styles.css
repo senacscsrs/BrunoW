@@ -156,6 +156,7 @@ body {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: left;
+  color: white;
 }
 
 .spinBtn1 {
@@ -208,6 +209,7 @@ body {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: left;
+  color: white;
 }
 
 .spinBtn2 {
@@ -259,6 +261,7 @@ body {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: left;
+  color: #dce8ff;
 }
 
 .spinBtn3 {
@@ -308,7 +311,7 @@ body {
   position: relative;
   padding: 50px 10%;
   background: #000;
-  color: #7a7a7a;
+  color: aliceblue;
   display: flex;
   flex-direction: column;
   height: fit-content;
@@ -321,7 +324,7 @@ body {
 }
 
 .formopen {
-  background-color: #7a7a7a;
+  background-color: aliceblue;
   color: #000;
   padding: 10px 20px;
   border: none;
@@ -334,7 +337,7 @@ body {
 /* ----------- FOOTER ----------- */
 .footer {
   background: #000;
-  color: #7a7a7a;
+  color: aliceblue;
   text-align: center;
   padding: 20px 10%;
   font-size: 1rem;
@@ -355,7 +358,7 @@ body {
 
 .footer-link:hover,
 .footer-link:focus {
-  color: #7a7a7a;
+  color: rgb(207, 213, 218);
   text-decoration: underline;
   cursor: crosshair;
 }
