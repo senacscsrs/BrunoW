@@ -1,0 +1,501 @@
+{
+  "name": "Shipping Instruction Parser",
+  "flow": [
+    {
+      "id": 1,
+      "module": "google-drive:watchFiles",
+      "version": 3,
+      "parameters": {
+        "watch": "all",
+        "limit": 10
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        },
+        "restore": {},
+        "parameters": [
+          {
+            "name": "watch",
+            "type": "select",
+            "label": "Watch Files",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "type": "number",
+            "label": "Maximum number of results",
+            "required": true
+          }
+        ],
+        "expect": []
+      }
+    },
+    {
+      "id": 2,
+      "module": "google-drive:downloadAFile",
+      "version": 3,
+      "parameters": {},
+      "mapper": {
+        "fileId": "{{1.id}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0
+        },
+        "restore": {},
+        "parameters": [],
+        "expect": [
+          {
+            "name": "fileId",
+            "type": "text",
+            "label": "File ID",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": false,
+        "useQuerystring": false,
+        "authPass": false
+      },
+      "mapper": {
+        "url": "https://api.openai.com/v1/chat/completions",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Bearer YOUR_OPENAI_API_KEY"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": "{\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a shipping instruction data extraction expert. Extract all relevant fields from shipping instruction documents. Look for variations in terminology (e.g., 'Consignee' vs 'Receiver', 'Net Weight' vs 'N.W.', 'POL' vs 'Port of Loading'). If multiple products are listed separated by '/', extract each separately. Return data as valid JSON only, no additional text.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"Extract the following fields from this shipping instruction PDF. Return ONLY valid JSON with this exact structure:\\n{\\n  \\\"to\\\": \\\"\\\",\\n  \\\"shipper\\\": \\\"\\\",\\n  \\\"consignee\\\": \\\"\\\",\\n  \\\"notify_party\\\": \\\"\\\",\\n  \\\"si_no\\\": \\\"\\\",\\n  \\\"caso_no\\\": \\\"\\\",\\n  \\\"port_of_loading\\\": \\\"\\\",\\n  \\\"port_of_discharge\\\": \\\"\\\",\\n  \\\"last_date_of_shipment\\\": \\\"\\\",\\n  \\\"shipping_documents\\\": \\\"\\\",\\n  \\\"hard_copies_sent_to\\\": \\\"\\\",\\n  \\\"special_instructions\\\": \\\"\\\",\\n  \\\"shipping_details\\\": \\\"\\\",\\n  \\\"fumigation\\\": \\\"\\\",\\n  \\\"beetle_traps\\\": \\\"\\\",\\n  \\\"products\\\": [\\n    {\\n      \\\"description_of_goods\\\": \\\"\\\",\\n      \\\"hs_code\\\": \\\"\\\",\\n      \\\"type\\\": \\\"\\\",\\n      \\\"grade\\\": \\\"\\\",\\n      \\\"grademark\\\": \\\"\\\",\\n      \\\"crop\\\": \\\"\\\",\\n      \\\"gross_weight\\\": \\\"\\\",\\n      \\\"tare_weight\\\": \\\"\\\",\\n      \\\"net_weight\\\": \\\"\\\",\\n      \\\"packing\\\": \\\"\\\",\\n      \\\"packing_material\\\": \\\"\\\",\\n      \\\"cartons\\\": \\\"\\\",\\n      \\\"net_kg_c48\\\": \\\"\\\",\\n      \\\"numbering\\\": \\\"\\\",\\n      \\\"labeling\\\": \\\"\\\",\\n      \\\"label_size\\\": \\\"\\\",\\n      \\\"position_on_cartons\\\": \\\"\\\"\\n    }\\n  ]\\n}\\n\\nIf multiple products are separated by '/', create separate product objects. Handle different date formats. Extract all fields even if terminology varies.\"\n        },\n        {\n          \"type\": \"image_url\",\n          \"image_url\": {\n            \"url\": \"data:application/pdf;base64,{{base64(2.data)}}\"\n          }\n        }\n      ]\n    }\n  ],\n  \"max_tokens\": 2000,\n  \"temperature\": 0.1\n}",
+        "timeout": 300
+      },
+      "metadata": {
+        "designer": {
+          "x": 600,
+          "y": 0
+        },
+        "restore": {
+          "expect": {
+            "method": {
+              "label": "POST"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "handleErrors",
+            "type": "boolean",
+            "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+            "required": true
+          },
+          {
+            "name": "useQuerystring",
+            "type": "boolean",
+            "label": "Serialize URL",
+            "required": true
+          },
+          {
+            "name": "authPass",
+            "type": "boolean",
+            "label": "Pass Authorization header to redirects",
+            "required": true
+          }
+        ],
+        "expect": [
+          {
+            "name": "url",
+            "type": "url",
+            "label": "URL",
+            "required": true
+          },
+          {
+            "name": "method",
+            "type": "select",
+            "label": "Method",
+            "required": true
+          },
+          {
+            "name": "headers",
+            "type": "array",
+            "label": "Headers"
+          },
+          {
+            "name": "body",
+            "type": "text",
+            "label": "Request body"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "module": "json:ParseJSON",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "json": "{{3.data.choices[1].message.content}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 900,
+          "y": 0
+        },
+        "restore": {},
+        "expect": [
+          {
+            "name": "json",
+            "type": "text",
+            "label": "JSON string",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "module": "google-sheets:addSheet",
+      "version": 2,
+      "parameters": {
+        "mode": "fromTemplate",
+        "insertDataOption": "INSERT_ROWS"
+      },
+      "mapper": {
+        "spreadsheetId": "YOUR_TEMPLATE_SPREADSHEET_ID",
+        "title": "SI_{{1.name}}_{{formatDate(now; \"YYYY-MM-DD_HHmmss\")}}",
+        "templateSheetId": "0"
+      },
+      "metadata": {
+        "designer": {
+          "x": 1200,
+          "y": 0
+        },
+        "restore": {
+          "parameters": {
+            "mode": {
+              "label": "From a Template Sheet"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "mode",
+            "type": "select",
+            "label": "Choose a Method",
+            "required": true
+          }
+        ],
+        "expect": [
+          {
+            "name": "spreadsheetId",
+            "type": "text",
+            "label": "Spreadsheet ID",
+            "required": true
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "label": "Sheet Name"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "module": "google-sheets:updateCell",
+      "version": 2,
+      "parameters": {
+        "insertDataOption": "INSERT_ROWS",
+        "mode": "map"
+      },
+      "mapper": {
+        "spreadsheetId": "{{5.spreadsheetId}}",
+        "sheetId": "{{5.sheetId}}",
+        "cellsArray": [
+          {
+            "cell": "B2",
+            "value": "{{4.to}}"
+          },
+          {
+            "cell": "B3",
+            "value": "{{4.shipper}}"
+          },
+          {
+            "cell": "B4",
+            "value": "{{4.consignee}}"
+          },
+          {
+            "cell": "B5",
+            "value": "{{4.notify_party}}"
+          },
+          {
+            "cell": "B6",
+            "value": "{{4.si_no}}"
+          },
+          {
+            "cell": "B7",
+            "value": "{{4.caso_no}}"
+          },
+          {
+            "cell": "B8",
+            "value": "{{4.port_of_loading}}"
+          },
+          {
+            "cell": "B9",
+            "value": "{{4.port_of_discharge}}"
+          },
+          {
+            "cell": "B10",
+            "value": "{{4.last_date_of_shipment}}"
+          },
+          {
+            "cell": "B11",
+            "value": "{{4.shipping_documents}}"
+          },
+          {
+            "cell": "B12",
+            "value": "{{4.hard_copies_sent_to}}"
+          },
+          {
+            "cell": "B13",
+            "value": "{{4.special_instructions}}"
+          },
+          {
+            "cell": "B14",
+            "value": "{{4.shipping_details}}"
+          },
+          {
+            "cell": "B15",
+            "value": "{{4.fumigation}}"
+          },
+          {
+            "cell": "B16",
+            "value": "{{4.beetle_traps}}"
+          }
+        ]
+      },
+      "metadata": {
+        "designer": {
+          "x": 1500,
+          "y": 0
+        },
+        "restore": {
+          "parameters": {
+            "mode": {
+              "label": "Map"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "mode",
+            "type": "select",
+            "label": "Choose a Method",
+            "required": true
+          }
+        ],
+        "expect": [
+          {
+            "name": "spreadsheetId",
+            "type": "text",
+            "label": "Spreadsheet ID",
+            "required": true
+          },
+          {
+            "name": "sheetId",
+            "type": "text",
+            "label": "Sheet Name or ID",
+            "required": true
+          },
+          {
+            "name": "cellsArray",
+            "type": "array",
+            "label": "Cell"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "module": "builtin:BasicRouter",
+      "version": 1,
+      "parameters": {},
+      "mapper": null,
+      "metadata": {
+        "designer": {
+          "x": 1800,
+          "y": 0
+        }
+      },
+      "routes": [
+        {
+          "flow": [
+            {
+              "id": 8,
+              "module": "google-sheets:addRow",
+              "version": 2,
+              "parameters": {
+                "insertDataOption": "INSERT_ROWS"
+              },
+              "mapper": {
+                "spreadsheetId": "{{5.spreadsheetId}}",
+                "sheetId": "{{5.sheetId}}",
+                "tableFirstRow": "A19:Q19",
+                "values": {
+                  "0": "{{8.description_of_goods}}",
+                  "1": "{{8.hs_code}}",
+                  "2": "{{8.type}}",
+                  "3": "{{8.grade}}",
+                  "4": "{{8.grademark}}",
+                  "5": "{{8.crop}}",
+                  "6": "{{8.gross_weight}}",
+                  "7": "{{8.tare_weight}}",
+                  "8": "{{8.net_weight}}",
+                  "9": "{{8.packing}}",
+                  "10": "{{8.packing_material}}",
+                  "11": "{{8.cartons}}",
+                  "12": "{{8.net_kg_c48}}",
+                  "13": "{{8.numbering}}",
+                  "14": "{{8.labeling}}",
+                  "15": "{{8.label_size}}",
+                  "16": "{{8.position_on_cartons}}"
+                }
+              },
+              "metadata": {
+                "designer": {
+                  "x": 2100,
+                  "y": 0
+                },
+                "restore": {},
+                "parameters": [
+                  {
+                    "name": "insertDataOption",
+                    "type": "select",
+                    "label": "Value input option",
+                    "required": true
+                  }
+                ],
+                "expect": [
+                  {
+                    "name": "spreadsheetId",
+                    "type": "text",
+                    "label": "Spreadsheet ID",
+                    "required": true
+                  },
+                  {
+                    "name": "sheetId",
+                    "type": "text",
+                    "label": "Sheet Name or ID",
+                    "required": true
+                  },
+                  {
+                    "name": "tableFirstRow",
+                    "type": "select",
+                    "label": "Table contains headers",
+                    "required": true
+                  },
+                  {
+                    "name": "values",
+                    "type": "collection",
+                    "label": "Values"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "module": "google-sheets:copySpreadsheet",
+      "version": 2,
+      "parameters": {},
+      "mapper": {
+        "spreadsheetId": "{{5.spreadsheetId}}",
+        "folderId": "YOUR_OUTPUT_FOLDER_ID",
+        "name": "SI_Processed_{{1.name}}_{{formatDate(now; \"YYYY-MM-DD\")}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 2400,
+          "y": 0
+        },
+        "restore": {},
+        "parameters": [],
+        "expect": [
+          {
+            "name": "spreadsheetId",
+            "type": "text",
+            "label": "Spreadsheet ID",
+            "required": true
+          },
+          {
+            "name": "folderId",
+            "type": "text",
+            "label": "Drive Location"
+          },
+          {
+            "name": "name",
+            "type": "text",
+            "label": "New Spreadsheet Name"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "module": "google-sheets:deleteSpreadsheet",
+      "version": 2,
+      "parameters": {},
+      "mapper": {
+        "spreadsheetId": "{{5.spreadsheetId}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 2700,
+          "y": 0
+        },
+        "restore": {},
+        "parameters": [],
+        "expect": [
+          {
+            "name": "spreadsheetId",
+            "type": "text",
+            "label": "Spreadsheet ID",
+            "required": true
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": false,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false
+    },
+    "designer": {
+      "orphans": []
+    },
+    "zone": "us1.make.com"
+  }
+}
