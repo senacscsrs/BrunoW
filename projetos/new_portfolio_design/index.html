@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portoflio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Calma, seu pc está bem...</h1>
-    <h2>        Este é meu portfolio, navegue com suas setas ou com o mouse</h2>
+    <div class="body">
+    <div class="text">
+        <h1 onclick=wink()>:)</h1>
+        <h2>Calma, seu pc está bem...</h2>
+        <h2>Este é meu portfolio.</h2>
+    </div>
+
         <div class="options">
             <ul class="list_options">
                 <li>
@@ -23,5 +28,25 @@
                 </li>
             </ul>
         </div>
+
+    <div id="cmdModal" class="modal">
+        <div class="cmd-content">
+            <div class="cmd-header">C:\User\Portfolio></div>
+            <div class="cmd-body" id="cmdOutput"></div>
+            <input type="text" id="cmdInput" placeholder="Digite um comando..." autofocus />
+        </div>
+    </div>
+    <div id="cmdCarouselModal" class="modal right">
+    <div class="cmd-carousel-content">
+        <div class="cmd-header">C:\Usuario\Portfolio\Projetos></div>
+        <div class="carousel-body" id="carouselOutput"></div>
+        <div class="carousel-controls">
+            <button id="carouselPrev">&#9664;</button>
+            <button id="carouselNext">&#9654;</button>
+        </div>
+    </div>
+</div>
+
+</div>
 </body>
 </html>
