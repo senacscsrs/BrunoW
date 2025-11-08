@@ -51,30 +51,30 @@ cmdInput.addEventListener('keydown', function(e) {
             case "1":
                 out =
 `C:\\Usuario\\Portfolio&gt; Projetos Escolares<br>
-- <a href="projetos/11-06-25/index.html" target="_blank" rel="noopener noreferrer">Hello World</a> — Projeto inicial mostrando o básico em programação.<br>
-- <a href="projetos/09-06-25/index.html" target="_blank" rel="noopener noreferrer">Imagens e Tamanhos</a> — Manipulação de imagens e responsividade.<br>
-- <a href="boair/index.html" target="_blank" rel="noopener noreferrer">BoAir</a> — Desenvolvido com Bruno W e Pedro B.<br>
-- <a href="projetos/gasolina/index.html" target="_blank" rel="noopener noreferrer">Calculador de Gasolina</a> — Calculadora de abastecimento.<br>
-- <a href="projetos/trabalhodesafio/index.html" target="_blank" rel="noopener noreferrer">Desafio Trabalho</a> — Simulação de problema real de empresa usando JS.<br>
+- <a href="../../projetos/11-06-25/index.html" target="_blank" rel="noopener noreferrer">Hello World</a> — Projeto inicial mostrando o básico em programação.<br>
+- <a href="../../projetos/09-06-25/index.html" target="_blank" rel="noopener noreferrer">Imagens e Tamanhos</a> — Manipulação de imagens e responsividade.<br>
+- <a href="../../boair/index.html" target="_blank" rel="noopener noreferrer">BoAir</a> — Desenvolvido com Bruno W e Pedro B.<br>
+- <a href="../../projetos/gasolina/index.html" target="_blank" rel="noopener noreferrer">Calculador de Gasolina</a> — Calculadora de abastecimento.<br>
+- <a href="../../projetos/trabalhodesafio/index.html" target="_blank" rel="noopener noreferrer">Desafio Trabalho</a> — Simulação de problema real de empresa usando JS.<br>
 Digite "voltar" para voltar à seleção<br>
 C\\Usuario\\Portfolio&gt;`;
                 break;
             case "2":
                 out =
 `C:\\Usuario\\Portfolio&gt; Projetos Pessoais<br>
-- <a href="projetos/primeirojs/index.html" target="_blank" rel="noopener noreferrer">Red vs. Blue</a> — Lógica e JavaScript.<br>
-- <a href="projetos/colorswitch/index.html" target="_blank" rel="noopener noreferrer">Gerador de Cor</a> — Gera cor RGB aleatória.<br>
-- <a href="projetos/chute/index.html" target="_blank" rel="noopener noreferrer">Chute</a> — Verificador de número.<br>
-- <a href="projetos/simon/index.html" target="_blank" rel="noopener noreferrer">Simon</a> — Jogo de memória.<br>
-- <a href="projetos/multiple choice/index.html" target="_blank" rel="noopener noreferrer">Multipla Escolha</a> — Quiz simples.<br>
-- <a href="projetos/jogodavelha/index.html" target="_blank" rel="noopener noreferrer">Jogo da Velha</a> — Jogo clássico.<br>
+- <a href="../../projetos/primeirojs/index.html" target="_blank" rel="noopener noreferrer">Red vs. Blue</a> — Lógica e JavaScript.<br>
+- <a href="../../projetos/colorswitch/index.html" target="_blank" rel="noopener noreferrer">Gerador de Cor</a> — Gera cor RGB aleatória.<br>
+- <a href="../../projetos/chute/index.html" target="_blank" rel="noopener noreferrer">Chute</a> — Verificador de número.<br>
+- <a href="../../projetos/simon/index.html" target="_blank" rel="noopener noreferrer">Simon</a> — Jogo de memória.<br>
+- <a href="../../projetos/multiple choice/index.html" target="_blank" rel="noopener noreferrer">Multipla Escolha</a> — Quiz simples.<br>
+- <a href="../../projetos/jogodavelha/index.html" target="_blank" rel="noopener noreferrer">Jogo da Velha</a> — Jogo clássico.<br>
 Digite "voltar" para voltar à seleção<br>
 C\\Usuario\\Portfolio&gt;`;
                 break;
             case "3":
                 out =
 `C:\\Usuario\\Portfolio&gt; Projetos Profissionais<br>
-- <a href="lifecarecandelaria/index.html" target="_blank" rel="noopener noreferrer">LifeCare Candelária</a> — Website para clínica de estética.<br>
+- <a href="../../lifecarecandelaria/index.html" target="_blank" rel="noopener noreferrer">LifeCare Candelária</a> — Website para clínica de estética.<br>
 Digite "voltar" para voltar à seleção<br>
 C\\Usuario\\Portfolio&gt;`;
                 break;
