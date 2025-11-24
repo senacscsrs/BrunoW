@@ -49,47 +49,7 @@
     </div>
 
     <script>
-      function calcularMedia() {
-        const nota1 = parseFloat(document.getElementById("nota1").value);
-        const nota2 = parseFloat(document.getElementById("nota2").value);
-
-        if (nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10) {
-          alert("As notas devem estar entre 0 e 10.");
-          return;
-        }
-
-        const media = (nota1 + nota2) / 2;
-        let conceito;
-
-        if (media > 8) {
-          conceito = "A";
-        } else if (media > 6) {
-          conceito = "B";
-        } else if (media > 4) {
-          conceito = "C";
-        } else if (media > 2) {
-          conceito = "D";
-        } else {
-          conceito = "E";
-        }
-
-        switch (conceito) {
-          case "A":
-            alert("A");
-            break;
-          case "B":
-            alert("B");
-            break;
-          case "C":
-            alert("C");
-            break;
-          case "D":
-            alert("D");
-            break;
-          default:
-            alert("E");
-        }
-      }
+      
     </script>
   </body>
 </html>

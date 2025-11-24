@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+</head>
+<body>
+    <h1>Calculadora Basica</h1>
+    <input id="num1">Primeiro numero</input> 
+        <select id="myDropdown" name="myDropdown">
+            <option id="plus" value="+">+</option>
+            <option id="minus" value="-">-</option>
+            <option id="times" value="*">*</option>
+            <option id="div" value="/">/</option>
+            <option id="expo" value="^">^</option>
+        </select>
+    <input id="num2">Segundo numero</input>
+    <button onclick="calc">Calcular</button>
+    <p id="resultado"></p>
+    <script>
+        function calc() {
+            const num1 = parseInt(document.getElementById("num1").value);
+            const num2 = parseInt(document.getElementById("num2").value);
+            const operation = document.getElementById("myDropdown").value;
+            let result = num1 + operation + num2;
+
+            switch (operation) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+                case "^":
+                    result = Math.pow(num1, num2);
+                    break;
+                default:
+                    result = "Operação inválida";
+            }   
+        }    document.querySelector("#resultado")
+             document.textContent = `O resultado é: Hello World`;
+
+    </script>
+</body>
+</html>

@@ -43,7 +43,18 @@ carro.ligar();
 // Mostre “Maior de idade” se a idade for 18 ou mais.
 // Mostre “Menor de idade” caso contrário.
 
+const obj = {
+    nome: "bruno",
+    idade: 16,
+    verificarIdade() {
+        if (this.idade >= 18)
+            console.log("Maior de Idade")
+        else 
+            console.log("Menor de Idade")
+    }
+}
 
+obj.verificarIdade()
 
 // 5. Objeto com array
 // Crie um objeto aluno com:
@@ -52,11 +63,42 @@ carro.ligar();
 // e um método media() que calcule e retorne a média.
 // Mostre a média no console.
 
+let aluno = {
+  nome: "Bruno",
+  notas: [10, 10, 10],
+  media() {
+    let soma = 0;
+    for (const numero of this.notas) {
+      soma += numero;
+    }
+    return soma / this.notas.length;
+  }
+};
+
+console.log(aluno.media());
 
 // 6. Laço com array de objetos
 // Crie um array chamado produtos com 3 objetos, cada um contendo nome e preco.
 // Use um for para mostrar o nome e o preço de cada produto.
 
+let array = [
+    produto1 = {
+        nome: "Monitor",
+        preco: 1500
+    },
+    produto2 = {
+        nome: "Gabinete",
+        preco: 900
+    },
+    produto3 = {
+        nome: "Mouse",
+        preco: 320
+    }
+]
+
+for (const produto of array) {
+    console.log(produto.nome, produto.preco);
+}
 
 // 7. Condicional em objetos
 // Com base no array produtos do exercício anterior, mostre apenas os produtos com preço maior que 50.

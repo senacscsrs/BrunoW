@@ -1,0 +1,11 @@
+.maincontainer {
+    background-image: url('/sabadoletivo/img/pericles-pagode-do-pericao-brasilia-e1731165013551.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -10px;
+}
+
