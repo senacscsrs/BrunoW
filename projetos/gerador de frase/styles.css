@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  height: 75px;
+  overflow-y: hidden;
+}
+
+.bau {
+  outline: none;
+  background: none;
+  border: none;
+  margin-top: 400px;
+  transition: transform 2000ms ease; /* animação suave */
+  transform: translateY(0); /* posição fechada */
+}
+
+.bau_img {
+  height: 20px;
+  width: 20px;
+}
+
+.bauimagem .aberto {
+  margin-top: 40px;
+}
+
+/* quando o baú estiver aberto, desce 50px */
+#bau.aberto,
+.bau.aberto {
+    margin-left: -25px;
+    transform: translateY(150px) scale(0.8);
+}
+
+.fortunatexto {
+    align-self: center;
+    justify-self: center;
+}
+
+.selects {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    margin-left: -1165px;
+    margin-top: -20px;
+}
+
+.main {
+    position: absolute;
+    margin-left: -730px;
+    margin-top: 55px;
+}
