@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p id="main"class="main">Este é um gerador de Piadas e Imagens, escolha uma abaixo.</p>
-        <select id="imgoutxt" class="selects">
-            <option id="s">Selecione</option>
-            <option id="img" onchange="toggleImagens()">Imagens</option>
-            <option id="txt" onchange="toggleTexto()">Texto</option>
-        </select>
-    <p id="piadaconatiner" class="piadatexto"></p>
-    <p id=imgconatiner" class="imgp"><img src=""></p>
-    <button id="bau" onclick="toggleBau()" class="bau"><img id="bau_img" src="imgs/baufechado.png" height="1000px" width="750px"></button>
+  <header class="top-bar">
+    <p id="main" class="main">
+      Este é um gerador de Imagens, clique o baú.
+    </p>
 
-    <script src="script.js" defer></script>
+    <select id="imgoutxt" class="selects" onchange="handleSelect()">
+      <option value="">Selecione</option>
+      <option value="imagens">Imagens</option>
+    </select>
+  </header>
+
+  <main class="stage">
+    <div class="bau-wrapper">
+      <button id="bau" onclick="toggleBau()" class="bau" disabled>
+        <img id="bau_img" src="imgs/baufechado.png" alt="Baú">
+      </button>
+
+      <div class="conteudo-bau">
+        <p id="piadacontainer" class="piadatexto"></p>
+        <img id="imgcontainer" class="imgp" src="" alt="Conteúdo do baú" style="display: none;">
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

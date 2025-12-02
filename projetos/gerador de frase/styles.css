@@ -1,54 +1,131 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  height: 75px;
-  overflow-y: hidden;
+  padding: 0;
 }
 
-.bau {
-  outline: none;
-  background: none;
-  border: none;
-  margin-top: 400px;
-  transition: transform 2000ms ease; /* animação suave */
-  transform: translateY(0); /* posição fechada */
+body {
+  background: radial-gradient(circle at top, #1f2933 0, #0b0f19 55%);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.bau_img {
-  height: 20px;
-  width: 20px;
-}
-
-.bauimagem .aberto {
-  margin-top: 40px;
-}
-
-/* quando o baú estiver aberto, desce 50px */
-#bau.aberto,
-.bau.aberto {
-    margin-left: -25px;
-    transform: translateY(150px) scale(0.8);
-}
-
-.fortunatexto {
-    align-self: center;
-    justify-self: center;
-}
-
-.selects {
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    margin-left: -1165px;
-    margin-top: -20px;
+/* top-left area: title + select */
+.top-bar {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
 }
 
 .main {
-    position: absolute;
-    margin-left: -730px;
-    margin-top: 55px;
+  max-width: 420px;
+  font-size: 1.1rem;
+}
+
+.selects {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #111827;
+  color: #ffffff;
+  outline: none;
+}
+
+.selects:focus {
+  border-color: #facc15;
+}
+
+/* center stage for the chest + content */
+.stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* chest wrapper */
+.bau-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* chest button */
+.bau {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: not-allowed;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.35s ease;
+}
+
+.bau:disabled {
+  opacity: 0.7;
+}
+
+.bau.aberto {
+  transform: translateY(100px);
+  cursor: pointer;
+}
+
+.bau img {
+  display: block;
+  width: 260px;
+  height: auto;
+}
+
+/* square content area above chest */
+.conteudo-bau {
+  position: relative;
+  margin-top: -120px;
+  width: 260px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* base content positioning */
+.piadatexto,
+.imgp {
+  position: absolute;
+  top: -70%;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* more open text */
+.piadatexto {
+  max-width: 95%;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+}
+
+/* image: square, full, centered */
+.imgp {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* when chest is open, move content up and show */
+.bau.aberto + .conteudo-bau .piadatexto,
+.bau.aberto + .conteudo-bau .imgp {
+  transform: translate(-50%, -100px);
+  opacity: 1;
 }
